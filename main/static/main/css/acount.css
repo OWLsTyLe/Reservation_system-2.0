@@ -9,11 +9,7 @@ body {
     flex-direction: column;
     overflow-x: hidden;
     font-family: 'Arial', sans-serif;
-    color:  #cfa078;
-    height: 100%;
-    width: 100%;
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);
-
+    color: #f3d0a4;
 }
 
 h1, p  {

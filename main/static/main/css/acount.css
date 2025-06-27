@@ -5,6 +5,9 @@
 }
 
 body {
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
     font-family: 'Arial', sans-serif;
     color:  #cfa078;
     height: 100%;
@@ -23,6 +26,19 @@ h2 {
     text-align: center;
     font-size: 35px;
     margin: 20px;
+}
+
+ul {
+    display: block;
+    padding: 0;
+    margin: 0 auto;
+    list-style-type: none;
+}
+
+li {
+    display: inline;
+    margin-bottom: 20px;
+    max-width: 600px;
 }
 
 

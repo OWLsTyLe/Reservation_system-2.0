@@ -4,6 +4,12 @@
     box-sizing: border-box;
 
 }
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
 
 body {
     display: flex;
@@ -11,8 +17,11 @@ body {
     overflow-x: hidden;
     font-family: 'Arial', sans-serif;
     color: #f3d0a4;
+    background-image: url('bg.png');
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 h1, p  {

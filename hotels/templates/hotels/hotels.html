@@ -1,6 +1,9 @@
 {% extends 'main/index.html' %}
-
+{% load static %}
 {% block title %}Hotels{% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/index.css' %}?v=2">
+{%block div%}
+{%endblock%}
 
 {% block content %}
 <div class="hotels-list">

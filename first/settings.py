@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -130,9 +131,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+# ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
@@ -147,3 +148,38 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'maxshypilkin@gmail.com'
 EMAIL_HOST_PASSWORD = 'qjxr vtoq dclg mwjy'
+
+UNFOLD = {
+    "SHOW_LANGUAGES": True,
+    "SITE_TITLE": "Адмінка Бронювання",
+    "SITE_HEADER": "Адміністрування",
+    # "SITE_ICON": "/static/images/logo.svg",  # кастомна іконка
+    # "DASHBOARD_ITEMS": [
+    #     {
+    #         "title": "Ресторани",
+    #         "icon": "fork-knife",
+    #         "url": "/admin/restaurants/restaurant/",
+    #     },
+    #     {
+    #         "title": "Готелі",
+    #         "icon": "hotel",
+    #         "url": "/admin/hotels/hotel/",
+    #     },
+    # ],
+    "SHOW_COUNTS": True,
+    "SHOW_RECENT": True,
+    "EXTENSIONS": {
+        "dark_mode": True,
+        "breadcrumbs": True,
+    }
+}
+
+# LANGUAGE_CODE = "en"
+
+USE_I18N = True
+
+LANGUAGES = (
+    ("de", ("German")),
+    ("en", ("English")),
+    ("uk",("Ukrainian")),
+)

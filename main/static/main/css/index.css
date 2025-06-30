@@ -177,4 +177,52 @@ aside ul {
     font-weight: bold;
 }
 
+/*!*Стилі для картинок*!*/
+.img-container{
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    border-radius: 50px;
+    width: 1600px;
+    height: 860px;
+}
+.over{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 1200px;
+    height: 860px;
+    font-size: 60px;
+    flex-direction: column;
+    color: #fff;
+    padding: 80px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
 
+/*.img-container1{*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*}*/
+
+/*img {*/
+/*    width: 800px;*/
+/*    height: auto;*/
+/*    opacity: 0;*/
+/*    transform: translateX(-100%);*/
+/*    animation: fly-in 1s ease-out forwards;*/
+/*}*/
+
+/*.delay1 {*/
+/*    animation-delay: 0.3s;*/
+/*}*/
+/*@keyframes fly-in {*/
+/*    to{*/
+/*        opacity: 1;*/
+/*        transform: translateX(0);*/
+/*    }*/
+/*}*/

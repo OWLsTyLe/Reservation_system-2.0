@@ -31,7 +31,7 @@ msgid "Ukrainian"
 msgstr "Українська"
 
 #: main/templates/main/index.html:19
-msgid "Home"
+msgid "Головна"
 msgstr "Heim"
 
 #: main/templates/main/index.html:20

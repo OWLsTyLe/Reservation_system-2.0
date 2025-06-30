@@ -27,4 +27,27 @@ msgstr ""
 
 #: first/settings.py:131
 msgid "Ukrainian"
-msgstr ""
+msgstr "Українська"
+
+#: main/templates/main/index.html:19
+msgid "Головна"
+msgstr "Home"
+
+#: main/templates/main/index.html:20
+msgid "Готелі"
+msgstr "Hotels"
+
+#: main/templates/main/index.html:21
+msgid "Ресторани"
+msgstr "Restaurants"
+
+
+#: main/templates/main/index.html:22
+msgid "Профіль"
+msgstr "Profile"
+
+
+#: main/templates/main/index.html:40
+msgid "ЗАБРОНЮЙТЕ ІДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС"
+msgstr "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
+

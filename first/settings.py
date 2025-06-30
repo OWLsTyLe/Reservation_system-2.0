@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -118,7 +119,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'uk'
+
+LOCALE_PATHS = [
+    BASE_DIR / 'locale',
+]
+
+LANGUAGES = (
+    ("uk", _("Ukrainian")),
+    ("de", _("German")),
+    ("en", _("English")),
+
+)
 
 TIME_ZONE = 'UTC'
 
@@ -173,13 +185,3 @@ UNFOLD = {
         "breadcrumbs": True,
     }
 }
-
-# LANGUAGE_CODE = "en"
-
-USE_I18N = True
-
-LANGUAGES = (
-    ("de", ("German")),
-    ("en", ("English")),
-    ("uk",("Ukrainian")),
-)

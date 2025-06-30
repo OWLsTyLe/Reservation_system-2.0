@@ -1,5 +1,6 @@
-{% load static %}
 <!doctype html>
+{% load i18n %}
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -15,10 +16,10 @@
     <div class="center-container">
         <aside>
             <ul>
-                <li><a href="{% url 'home' %}" class="btn">Головна</a></li>
-                <li><a href="{% url 'hotels' %}" class="btn">Отелі</a></li>
-                <li><a href="{% url 'restourants' %}" class="btn">Ресторани</a></li>
-                <li><a href="{% url 'ackount' %}" class="btn">Профіль</a></li>
+                <li><a href="{% url 'home' %}" class="btn">{% trans "Home" %}</a></li>
+                 <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
+                <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
+                <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
             </ul>
         </aside>
         <div class="content-overlay">
@@ -33,5 +34,13 @@
         <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image">
         <div class="over">ЗАБРОНЮЙТЕ IДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС</div>
     </div>
+<form action="{% url 'set_language' %}" method="post" id="language-form">
+  {% csrf_token %}
+  <select name="language" onchange="document.getElementById('language-form').submit();">
+    <option value="uk">Українська</option>
+    <option value="en">English</option>
+    <option value="de">Deutsch</option>
+  </select>
+</form>
 </body>
 </html>

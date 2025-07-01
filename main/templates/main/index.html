@@ -20,7 +20,7 @@
                 <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
                 <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
                 <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
-</ul>
+            </ul>
         </aside>
         <div class="content-overlay">
             <main>
@@ -30,10 +30,12 @@
             </main>
         </div>
     </div>
+    {% block div %}
     <div class="img-container">
         <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image">
         <div class="over">{% trans "Book the perfect place for rest or dinner with us" %}</div>
     </div>
+    {% endblock %}
 
 <form action="{% url 'set_language' %}" method="post" id="language-form">
   {% csrf_token %}

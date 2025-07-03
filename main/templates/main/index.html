@@ -22,6 +22,16 @@
                 <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
                 <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
                 <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
+                <li>
+                    <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
+                        {% csrf_token %}
+                        <select name="language" onchange="document.getElementById('language-form').submit();" class="select-language">
+                            <option value="uk">UA</option>
+                            <option value="en">EN</option>
+                            <option value="de">DE</option>
+                        </select>
+                    </form>
+                </li>
             </ul>
         </aside>
         <div class="content-overlay">
@@ -39,14 +49,7 @@
     </div>
     {% endblock %}
 
-<form action="{% url 'set_language' %}" method="post" id="language-form">
-  {% csrf_token %}
-  <select name="language" onchange="document.getElementById('language-form').submit();">
-    <option value="uk">Українська</option>
-    <option value="en">English</option>
-    <option value="de">Deutsch</option>
-  </select>
-</form>
+
 
 </body>
 </html>

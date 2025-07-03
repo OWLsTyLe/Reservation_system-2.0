@@ -4,12 +4,13 @@
 {%block div%}
 {%endblock%}
 {%block css%}
-<link rel="stylesheet" href="{% static 'main/css/index.css' %}">
-{% endblock %}
+<link rel="stylesheet" href="{% static 'main/css/restaurants.css' %}">
+{%endblock%}
+
 {% block content %}
 <div class="hotels-list">
     {% for restaurant in restaurants %}
-    <a href="{% url 'restaurant' restaurant.id %}" class="btn btn-danger">
+    <a href="{% url 'restaurant' restaurant.id %}">
         <div class="hotel-card btn">
             {% if restaurant.image %}
             <div class="hotel-image-container">
@@ -20,11 +21,9 @@
                 <h5>{{ restaurant.name }}</h5>
                 <p><i class="bi bi-star" style="color: gold; font-size: 1.5rem;"></i> {{ restaurant.rating }}</p>
                 <p>{{ restaurant.description }}</p>
-
             </div>
         </div>
     </a>
-
     {% endfor %}
 </div>
 {% endblock %}

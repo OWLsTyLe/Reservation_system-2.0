@@ -75,6 +75,7 @@ aside ul {
     border-radius: 20px;
     overflow: hidden;
     width: 100%;
+    height: 500px;
     max-width: 350px;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -204,34 +205,7 @@ img{
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
 }
-/*Зараз спробую зробити хочаб якісь стилі для списка мов*/
-.select-language{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: lightyellow;
-    border: none;
-    outline: none;
-    box-shadow: none;
-    color: #f6a99e;
-    font-family: 'Arial', sans-serif;
-    border-radius: 40px;
-    width: 100px;
-    height: 60px;
-    font-size: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    text-align: center;
-}
-.select-language:hover{
-    color: #660e60;
-    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
-}
 
-.select-language option{
-    border-radius: 20px;
-    cursor: pointer;
-}
 /*.img-container1{*/
 /*    display: flex;*/
 /*    gap: 20px;*/

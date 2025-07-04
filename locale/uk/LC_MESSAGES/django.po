@@ -33,22 +33,20 @@ msgstr "Українська"
 msgid "Home"
 msgstr "Головна"
 
-
-
 #: main/templates/main/index.html:20
 msgid "Hotels"
 msgstr "Готелі"
 
 #: main/templates/main/index.html:21
-msgid "Ресторани"
-msgstr "Restaurants"
+msgid "Restaurants"
+msgstr "Ресторани"
 
 #: main/templates/main/index.html:22
-msgid "Профіль"
-msgstr "Profile"
-
+msgid "Profile"
+msgstr "Профіль"
 
 #: main/templates/main/index.html:40
-msgid "ЗАБРОНЮЙТЕ ІДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС"
-msgstr "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
+msgid "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
+msgstr "ЗАБРОНЮЙТЕ ІДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС"
+
 

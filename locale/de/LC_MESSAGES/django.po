@@ -35,13 +35,13 @@ msgid "Головна"
 msgstr "Heim"
 
 #: main/templates/main/index.html:20
-msgid "Hotels"
+msgid "Готелі"
 msgstr "Hotels"
 
 #: main/templates/main/index.html:21
-msgid "Restaurants"
+msgid "Ресторани"
 msgstr "Restaurants"
 
 #: main/templates/main/index.html:22
-msgid "Profile"
+msgid "Профіль"
 msgstr "Profil"

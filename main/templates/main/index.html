@@ -17,9 +17,9 @@
         <aside>
             <ul>
                 <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
-                <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
-                <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
-                <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
+                <li><a href="{% url 'hotels' %}" class="btn">{% trans "Готелі" %}</a></li>
+                <li><a href="{% url 'restourants' %}" class="btn">{% trans "Ресторани" %}</a></li>
+                <li><a href="{% url 'ackount' %}" class="btn">{% trans "Профіль" %}</a></li>
 </ul>
         </aside>
         <div class="content-overlay">
@@ -38,9 +38,9 @@
 <form action="{% url 'set_language' %}" method="post" id="language-form">
   {% csrf_token %}
   <select name="language" onchange="document.getElementById('language-form').submit();">
-    <option value="uk">Українська</option>
-    <option value="en">English</option>
-    <option value="de">Deutsch</option>
+    <option value="uk">🇺🇦</option>
+    <option value="en">🇬🇧</option>
+    <option value="de">🇩🇪</option>
   </select>
 </form>
 

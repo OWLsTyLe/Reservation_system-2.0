@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-30 12:32+0300\n"
+"POT-Creation-Date: 2025-07-05 10:56+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,29 +19,33 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: first/settings.py:129
-msgid "German"
-msgstr "Німецька"
-
-#: first/settings.py:130
-msgid "English"
-msgstr "Англійська"
-
-#: first/settings.py:131
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: main/templates/main/index.html:19
+#: first/settings.py:130
+msgid "German"
+msgstr "Німецька"
+
+#: first/settings.py:131
+msgid "English"
+msgstr "Англійська"
+
+#: main/templates/main/index.html:22
 msgid "Головна"
 msgstr "Heim"
 
-#: main/templates/main/index.html:20
-msgid "Готелі"
+#: main/templates/main/index.html:23
+msgid "Hotels"
 msgstr "Hotels"
 
-#: main/templates/main/index.html:21
-msgid "Ресторани"
+#: main/templates/main/index.html:24
+msgid "Restaurants"
 msgstr "Restaurants"
 
-#: main/templates/main/index.html:22
-msgid "Профіль"
+#: main/templates/main/index.html:25
+msgid "Profile"
 msgstr "Profil"
+
+#: main/templates/main/index.html:48
+msgid "Book the perfect place for rest or dinner with us"
+msgstr "Buchen Sie bei uns den perfekten Ort zum Ausruhen oder Abendessen"

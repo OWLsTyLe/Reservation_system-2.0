@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Booking Site 1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-06-30 12:24+0300\n"
+"POT-Creation-Date: 2025-07-05 11:04+0000\n"
 "PO-Revision-Date: 2025-06-30 13:00+0300\n"
 "Last-Translator: Maks Shypilkin <you@example.com>\n"
 "Language-Team: Ukrainian\n"
@@ -15,38 +15,43 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : 2);\n"
 
 #: first/settings.py:129
-msgid "German"
-msgstr "Німецька"
-
-#: first/settings.py:130
-msgid "English"
-msgstr "Англійська"
-
-#: first/settings.py:131
 msgid "Ukrainian"
 msgstr "Українська"
 
-#: main/templates/main/index.html:19
-msgid "Home"
-msgstr "Головна"
+#: first/settings.py:130
+msgid "German"
+msgstr "Німецька"
 
-#: main/templates/main/index.html:20
+#: first/settings.py:131
+msgid "English"
+msgstr "Англійська"
+
+#: main/templates/main/index.html:22
+msgid "Головна"
+msgstr ""
+
+#: main/templates/main/index.html:23
 msgid "Hotels"
 msgstr "Готелі"
 
-#: main/templates/main/index.html:21
+#: main/templates/main/index.html:24
 msgid "Restaurants"
 msgstr "Ресторани"
 
-#: main/templates/main/index.html:22
+#: main/templates/main/index.html:25
 msgid "Profile"
 msgstr "Профіль"
 
-#: main/templates/main/index.html:40
-msgid "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
-msgstr "ЗАБРОНЮЙТЕ ІДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС"
+#: main/templates/main/index.html:48
+msgid "Book the perfect place for rest or dinner with us"
+msgstr "Забронюйте ідеальне місце для відпочинку чи вечері у нас"
 
+#~ msgid "Home"
+#~ msgstr "Головна"
 
+#~ msgid "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
+#~ msgstr "Забронюйте ідеальне місце для відпочинку чи вечері у нас"

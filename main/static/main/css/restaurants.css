@@ -228,3 +228,35 @@ img{
 /*        transform: translateX(0);*/
 /*    }*/
 /*}*/
+
+.select-language{
+    display: flex;
+    appearance: none;
+    background-size: 20px;
+    padding-right: 30px;
+    justify-content: center;
+    align-items: center;
+    background: lightyellow url("data:image/svg+xml;charset=UTF-8,<svg fill='%23f6a99e' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #f6a99e;
+    font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
+    border-radius: 40px;
+    width: 100px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.select-language:hover{
+    color: #660e60;
+    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
+}
+
+.select-language option{
+    border-radius: 40px;
+    cursor: pointer;
+}

@@ -230,4 +230,55 @@ aside ul {
     border-radius: 40px;
     cursor: pointer;
 }
+/*footer*/
+.footer{
+    display: flex;
+    align-items: center;
+
+    height: 80px;
+    background: #0B0D17;
+    color : #D9D8E1;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto ;
+    width: 1500px;
+    height: 60px;
+}
+.footer-copyright{
+    font-size: 14px;
+}
+.socials{
+    display: flex;
+}
+
+.socials-item{
+    margin-left: 16px;
+}
+
+
+.img{
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.img:hover{
+    opacity: 0.5;
+    background: lightgray;
+}
+
+.contact{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+footer .footer-container .contact p {
+    display: block;
+    margin: 10px 0;
+}
 

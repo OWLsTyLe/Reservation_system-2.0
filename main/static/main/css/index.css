@@ -9,6 +9,11 @@ body, html {
     /*background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
     color: #f3d0a4;
 }
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .center-container {
     position: relative;
@@ -18,6 +23,7 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 aside {
@@ -259,13 +265,14 @@ img{
 /*    }*/
 /*}*/
 
-
+/*footer*/
 .footer{
     display: flex;
     align-items: center;
-    height: 72px;
+    height: 80px;
     background: #0B0D17;
     color : #D9D8E1;
+    position: relative;
 }
 
 .footer-container{
@@ -297,5 +304,16 @@ img{
 .img:hover{
     opacity: 0.5;
     background: lightgray;
+}
+
+.contact{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+footer .footer-container .contact p {
+    display: block;
+    margin: 10px 0;
 }
 

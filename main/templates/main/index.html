@@ -16,53 +16,60 @@
     {% endblock %}
 </head>
 <body>
-    <div class="center-container">
-        <aside>
-            <ul>
-                <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
-                <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
-                <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
-                <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
-                <li>
-                    <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
-                        {% csrf_token %}
-                        <select name="language" onchange="document.getElementById('language-form').submit();" class="select-language">
-                            <option value="uk" {% if LANGUAGE_CODE == "uk" %}selected{% endif %}>🇺🇦 UA</option>
-                            <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>🇬🇧 GB</option>
-                            <option value="de" {% if LANGUAGE_CODE == "de" %}selected{% endif %}>🇩🇪 DE</option>
-                        </select>
-                    </form>
-                </li>
-            </ul>
-        </aside>
-        <div class="content-overlay">
-            <main>
-                {% block content %}{% endblock %}
-            </main>
-        </div>
-    </div>
-
-    {% block div %}
-    <div class="img-container">
-        <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image">
-        <div class="over">{% trans "Book the perfect place for rest or dinner with us" %}</div>
-    </div>
-    {% endblock %}
-
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="copyright">
-                <p>&copy; 2025 Reservation-system.</p>
-            </div>
-            <div class="socials">
-                <a href="" class="socials-items">
-                    <img class="img" src="{% static 'main/img/Instagram.svg' %}" alt="">
-                </a>
-                <a href="" class="socials-items">
-                    <img class="img" src="{% static 'main/img/Twitter.svg' %}" alt="">
-                </a>
+    <div class="page-wrapper">
+        <div class="center-container">
+            <aside>
+                <ul>
+                    <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
+                    <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
+                    <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
+                    <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
+                    <li>
+                        <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
+                            {% csrf_token %}
+                            <select name="language" onchange="document.getElementById('language-form').submit();" class="select-language">
+                                <option value="uk" {% if LANGUAGE_CODE == "uk" %}selected{% endif %}>🇺🇦 UA</option>
+                                <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>🇬🇧 GB</option>
+                                <option value="de" {% if LANGUAGE_CODE == "de" %}selected{% endif %}>🇩🇪 DE</option>
+                            </select>
+                        </form>
+                    </li>
+                </ul>
+            </aside>
+            <div class="content-overlay">
+                <main>
+                    {% block content %}{% endblock %}
+                </main>
             </div>
         </div>
-    </footer>
+
+        {% block div %}
+        <div class="img-container">
+            <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image">
+            <div class="over">{% trans "Book the perfect place for rest or dinner with us" %}</div>
+        </div>
+        {% endblock %}
+        {% block footer %}
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="copyright">
+                    <p>&copy; 2025 Reservation-system.</p>
+                </div>
+                <div class="contact">
+                    <p>Номер телефону: +3800000000000</p>
+                    <p>Почта адміністрації: <a href="" target="_blank">reservation@gmail.com</a></p>
+                </div>
+                <div class="socials">
+                    <a href="" class="socials-items">
+                        <img class="img" src="{% static 'main/img/Instagram.svg' %}" alt="">
+                    </a>
+                    <a href="" class="socials-items">
+                        <img class="img" src="{% static 'main/img/Twitter.svg' %}" alt="">
+                    </a>
+                </div>
+            </div>
+        </footer>
+        {% endblock %}
+    </div>
 </body>
 </html>

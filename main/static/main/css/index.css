@@ -258,3 +258,44 @@ img{
 /*        transform: translateX(0);*/
 /*    }*/
 /*}*/
+
+
+.footer{
+    display: flex;
+    align-items: center;
+    height: 72px;
+    background: #0B0D17;
+    color : #D9D8E1;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto ;
+    width: 1500px;
+    height: 60px;
+}
+.footer-copyright{
+    font-size: 14px;
+}
+.socials{
+    display: flex;
+}
+
+.socials-item{
+    margin-left: 16px;
+}
+
+
+.img{
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.img:hover{
+    opacity: 0.5;
+    background: lightgray;
+}
+

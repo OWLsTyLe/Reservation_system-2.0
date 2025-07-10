@@ -44,8 +44,18 @@
 
 {% block div %}
 <div class="img-container">
-    <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image">
-    <div class="over">{% trans "Book the perfect place for rest or dinner with us" %}</div>
+    <div class="slider">
+        <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image" class="slider-img active">
+        <p class="over">{% trans "Book the perfect place for rest or dinner with us" %}</p>
+        <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img active">
+        <p class="over">{% trans "Book the perfect place for rest or dinner with us" %}</p>
+        <div>
+            <img src="{% static 'main/img/left.png' %}" class="prev controls">
+        </div>
+        <div>
+            <img src="{% static 'main/img/right.png' %}" class="next controls">
+        </div>
+    </div>
 </div>
 {% endblock %}
 {% block footer %}
@@ -69,5 +79,6 @@
     </div>
 </footer>
 {% endblock %}
+<script src="{% static 'main/js/slider.js' %}"></script>
 </body>
 </html>

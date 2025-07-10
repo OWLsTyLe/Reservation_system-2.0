@@ -7,46 +7,67 @@
   <link rel="stylesheet" href="{% static 'main/css/acount.css' %}">
 </head>
 <body>
-<h1>Ваш профіль</h1>
-<p>Вітаємо вас {{ user.username }}</p>
+<div class="content">
+  <h1>Ваш профіль</h1>
+  <p class="p">Вітаємо вас {{ user.username }}</p>
 
-<h2>Ваші замовлення</h2>
+  <h2>Ваші замовлення</h2>
 
-{% if bookings %}
-<div class="table">
-  <table>
-    <thead>
-    <tr>
-      <th>Готель</th>
-      <th>Тип номеру</th>
-      <th>Ціна за ніч</th>
-      <th>Дата заїзду</th>
-      <th>Дата виїзду</th>
-      <th>Загальна ціна</th>
-      <th>Відмінити замовлення</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for booking in bookings %}
-    <tr>
-      <td>{{ booking.room.hotel.name }}</td>
-      <td>{{ booking.room.room_type.name }}</td>
-      <td>{{ booking.room.price_per_night }} грн</td>
-      <td>{{ booking.start_date }}</td>
-      <td>{{ booking.end_date }}</td>
-      <td></td>
-      <td><button class="btn" id="btn-сancel">ВІДМІНИТИ</button></td>
-    </tr>
-    {% endfor %}
-    </tbody>
-  </table>
+  {% if bookings %}
+  <div class="table">
+    <table>
+      <thead>
+      <tr>
+        <th>Готель</th>
+        <th>Тип номеру</th>
+        <th>Ціна за ніч</th>
+        <th>Дата заїзду</th>
+        <th>Дата виїзду</th>
+        <th>Загальна ціна</th>
+        <th>Відмінити замовлення</th>
+      </tr>
+      </thead>
+      <tbody>
+      {% for booking in bookings %}
+      <tr>
+        <td>{{ booking.room.hotel.name }}</td>
+        <td>{{ booking.room.room_type.name }}</td>
+        <td>{{ booking.room.price_per_night }} грн</td>
+        <td>{{ booking.start_date }}</td>
+        <td>{{ booking.end_date }}</td>
+        <td></td>
+        <td><button class="btn" id="btn-сancel">ВІДМІНИТИ</button></td>
+      </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <p>У вас немає замовлень.</p>
+  {% endif %}
+  <div class="form">
+    <a href="{% url 'home' %}" class="btn1">На головну</a>
+  </div>
 </div>
-{% else %}
-<p>У вас немає замовлень.</p>
-{% endif %}
-<div class="form">
-  <a href="{% url 'home' %}" class="btn1">На головну</a>
-</div>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="copyright">
+      <p>&copy; 2025 Reservation-system.</p>
+    </div>
+    <div class="contact">
+      <p>Номер телефону: +3800000000000</p>
+      <p>Почта адміністрації: <a href="" target="_blank">reservation@gmail.com</a></p>
+    </div>
+    <div class="socials">
+      <a href="" class="socials-items">
+        <img class="img" src="{% static 'main/img/Instagram.svg' %}" alt="">
+      </a>
+      <a href="" class="socials-items">
+        <img class="img" src="{% static 'main/img/Twitter.svg' %}" alt="">
+      </a>
+    </div>
+  </div>
+</footer>
 <!--Я короче откатился назад, и начну всё с начал, только теперь буду всё проверять-->
 </body>
 </html>

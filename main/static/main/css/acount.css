@@ -18,17 +18,21 @@ body {
     font-family: 'Arial', sans-serif;
     color: #f3d0a4;
     /*background-image: url('bg.png');*/
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+    background-color: lightyellow;
+    min-height: 100vh;
+    /*background-repeat: no-repeat;*/
+    /*background-attachment: fixed;*/
+    /*background-size: cover;*/
+    /*background-position: center;*/
 }
 
-h1, p  {
+h1{
     text-align: center;
     font-size: 50px;
-
+}
+.p{
+    text-align: center;
+    font-size: 50px;
 }
 
 h2 {
@@ -145,27 +149,25 @@ tbody tr:nth-child(even) td:nth-child(even) {
 }
 
 .btn1 {
-    margin: 15px;
-    width: 200px;
-    height: 50px;
     padding: 15px 40px;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    color: #f3d0a4;
-    background: #893f71;
-    border: 2px solid #cfa093;
+    font-size: 18px;
+    color: #f6a99e;
+    background: lightyellow;
+    /*border: 2px solid #a76f82;*/
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
+    border: 2px solid #ffd864;
+    margin: 10px;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);
+    /*box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);*/
     text-decoration: none;
 }
 
 .btn1:hover {
-    background: #ac6f82;
-    border-color: #f3d0a4;
+    /*background: #a76f82;*/
+    /*border-color: #f3d0a4;*/
+    color: #660e60;
     box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
 }
 
@@ -173,6 +175,66 @@ tbody tr:nth-child(even) td:nth-child(even) {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    height: 80px;
+    background: #0B0D17;
+    color : #D9D8E1;
+    position: relative;
+}
+
+.footer-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto ;
+    width: 1500px;
+    height: 60px;
+}
+.footer-copyright{
+    font-size: 14px;
+}
+.socials{
+    display: flex;
+}
+
+.socials-item{
+    margin-left: 16px;
+    cursor: pointer;
+}
+
+
+.img{
+    padding: 5px;
+    width: 100%;
+    height: auto;
+}
+
+.img:hover{
+    opacity: 0.5;
+    background: lightgray;
+    border-radius: 50%;
+}
+
+.contact{
+    display: block;
+    justify-content: center;
+    align-items: center;
+
+}
+footer .footer-container .contact p {
+    display: block;
+    margin: 10px 0;
 }
 
 

@@ -46,15 +46,12 @@
 <div class="img-container">
     <div class="slider">
         <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image" class="slider-img active">
-        <p class="over">{% trans "Book the perfect place for rest or dinner with us" %}</p>
-        <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img active">
-        <p class="over">{% trans "Book the perfect place for rest or dinner with us" %}</p>
-        <div>
-            <img src="{% static 'main/img/left.png' %}" class="prev controls">
-        </div>
-        <div>
-            <img src="{% static 'main/img/right.png' %}" class="next controls">
-        </div>
+        <div class="over actives">{% trans "Book the perfect place for rest or dinner with us" %}</div>
+        <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img">
+        <div class="over">Тут Буде якийсь текст, но мені зараз впадлу його придумувати</div>
+        <!--Ці картинки що знизу коментаря це картинки перемикання слайда, треба буде їх змінити на кнопки-->
+        <img src="{% static 'main/img/left.png' %}" class="prev controls">
+        <img src="{% static 'main/img/right.png' %}" class="next controls">
     </div>
 </div>
 {% endblock %}

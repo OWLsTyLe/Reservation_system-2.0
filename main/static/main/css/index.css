@@ -192,7 +192,7 @@ img{
     height: 860px;
 }
 .over{
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -205,9 +205,11 @@ img{
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
 }
-.img-container .slider .over.active{
-    display: block;
+.over.actives{
+    display: flex;
 }
+
+
 /*Зараз спробую зробити хочаб якісь стилі для списка мов*/
 .select-language{
     display: flex;
@@ -221,7 +223,6 @@ img{
     outline: none;
     box-shadow: none;
     color: #f6a99e;
-    font-family: "Segoe UI Emoji", "Noto Color Emoji", sans-serif;
     border-radius: 40px;
     width: 100px;
     height: 60px;

@@ -1,31 +1,27 @@
 const images = document.querySelectorAll('.slider-img');
+const texts = document.querySelectorAll('.over');
 const controls = document.querySelectorAll('.controls');
-let imagesIndex = 0;
+let currentIndex = 0;
 
-function showImage(index) {
-    images[imagesIndex].classList.remove('active');
+function showSlide(index) {
+    images.forEach(img => img.classList.remove('active'));
+    texts.forEach(txt => txt.classList.remove('actives'));
     images[index].classList.add('active');
-    imagesIndex = index;
+    texts[index].classList.add('actives');
+    currentIndex = index;
 }
-
-controls.forEach((e) => {
-    e.addEventListener('click', () => {
+controls.forEach(control => {
+    control.addEventListener('click', (event) => {
+        let index;
         if (event.target.classList.contains('prev')) {
-            let index = imagesIndex - 1;
-
-            if (index < 0) {
-                index = images.length - 1;
-            }
-            showImage(index);
+            index = currentIndex - 1;
+            if (index < 0) index = images.length - 1;
         } else if (event.target.classList.contains('next')) {
-            let index = imagesIndex + 1;
-
-            if (index >= images.length) {
-                index = 0;
-            }
-            showImage(index);
+            index = currentIndex + 1;
+            if (index >= images.length) index = 0;
         }
-    })
-})
+        showSlide(index);
+    });
+});
 
-showImage(imagesIndex);
+showSlide(currentIndex);

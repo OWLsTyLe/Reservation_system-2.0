@@ -6,8 +6,8 @@ body, html {
     font-family: 'Arial', sans-serif;
     background-color: lightyellow;
     /*background: #660e60;*/
-    /*background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
-    color: #f3d0a4;
+    /*backgrou
+    color: #f3d0a4;nd: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
 }
 .page-wrapper {
     display: flex;

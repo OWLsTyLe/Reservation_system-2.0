@@ -3,6 +3,7 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
+    min-height: 100vh;
     font-family: 'Arial', sans-serif;
     background-color: lightyellow;
     /*background: #660e60;*/

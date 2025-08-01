@@ -5,14 +5,16 @@ body, html {
     width: 100%;
     font-family: 'Arial', sans-serif;
     background-color: lightyellow;
+    /*background: #660e60;*/
+    /*background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
     color: #f3d0a4;
 }
 
 .center-container {
     position: relative;
+    box-shadow: 0 0 6px black;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);
+    height: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,43 +42,47 @@ aside ul {
 .btn {
     padding: 15px 40px;
     font-size: 18px;
-    color: #f3d0a4;
-    background: #893f71;
-    border: 2px solid #cfa093;
+    color: #f6a99e;
+    background: lightyellow;
+    /*border: 2px solid #a76f82;*/
     border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);
+    /*box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);*/
     text-decoration: none;
 }
 
 .btn:hover {
-    background: #ac6f82;
-    border-color: #f3d0a4;
+    /*background: #a76f82;*/
+    /*border-color: #f3d0a4;*/
+    color: #660e60;
     box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
 }
 
 .hotels-list {
     display: flex;
+    width: 1000px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
     padding: 50px 20px;
-    margin-top: 80px; /* Відступ для уникнення перекриття кнопками */
+    margin-top: 80px;
 }
 
 .hotel-card {
     background: transparent;
+    width: 800px;
+    height: 500px;
     color: #660e60;
     border-radius: 20px;
     overflow: hidden;
-    width: 100%;
     max-width: 350px;
-    padding: 20px;
+    padding: 40px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
     text-align: center;
+    margin: auto;
 }
 
 .hotel-card:hover {
@@ -86,7 +92,8 @@ aside ul {
 }
 
 .hotel-card img {
-    width: 100%;
+    width: 250px;
+    border-radius: 50px;
     height: auto;
     border-bottom: 2px solid #660e60;
     opacity: 0.6;
@@ -175,55 +182,102 @@ aside ul {
     font-weight: bold;
 }
 
-/*kjsbefkhbahejfb*/
-/*footer*/
-.footer{
+/*!*Стилі для картинок*!*/
+
+
+.over{
     display: flex;
-    align-items: center;
-    height: 80px;
-    background: #0B0D17;
-    color : #D9D8E1;
-
-}
-
-.footer-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto ;
-    width: 1500px;
-    height: 60px;
-}
-.footer-copyright{
-    font-size: 14px;
-}
-.socials{
-    display: flex;
-}
-
-.socials-item{
-    margin-left: 16px;
-}
-
-
-.img{
-    padding: 5px;
-    width: 100%;
-    height: auto;
-}
-
-.img:hover{
-    opacity: 0.5;
-    background: lightgray;
-}
-
-.contact{
-    display: block;
     justify-content: center;
     align-items: center;
+    position: absolute;
+    width: 1200px;
+    height: 860px;
+    font-size: 60px;
+    flex-direction: column;
+    color: #fff;
+    padding: 80px;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+}
+.select-language{
+    display: flex;
+    appearance: none;
+    background-size: 20px;
+    padding-right: 30px;
+    justify-content: center;
+    align-items: center;
+    background: lightyellow url("data:image/svg+xml;charset=UTF-8,<svg fill='%23f6a99e' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    color: #f6a99e;
+    border-radius: 40px;
+    width: 100px;
+    height: 60px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+    cursor: pointer;
+    text-align: center;
+}
+.select-language:hover{
+    color: #660e60;
+    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
+}
 
+.select-language option{
+    border-radius: 40px;
+    cursor: pointer;
 }
-footer .footer-container .contact p {
-    display: block;
-    margin: 10px 0;
-}
+/*!*footer*!*/
+/*.footer{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+
+/*    height: 80px;*/
+/*    background: #0B0D17;*/
+/*    color : #D9D8E1;*/
+/*}*/
+
+/*.footer-container{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    margin: 0 auto ;*/
+/*    width: 1500px;*/
+/*    height: 60px;*/
+/*}*/
+/*.footer-copyright{*/
+/*    font-size: 14px;*/
+/*}*/
+/*.socials{*/
+/*    display: flex;*/
+/*}*/
+
+/*.socials-item{*/
+/*    margin-left: 16px;*/
+/*}*/
+
+
+/*.img{*/
+/*    padding: 5px;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
+
+/*.img:hover{*/
+/*    opacity: 0.5;*/
+/*    background: lightgray;*/
+/*}*/
+
+/*.contact{*/
+/*    display: block;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+
+/*}*/
+/*footer .footer-container .contact p {*/
+/*    display: block;*/
+/*    margin: 10px 0;*/
+/*}*/
+

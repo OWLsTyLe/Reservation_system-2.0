@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 
 from pathlib import Path
 from django.utils.translation import gettext_lazy as _
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -185,3 +186,6 @@ UNFOLD = {
         "breadcrumbs": True,
     }
 }
+
+STRIPE_SECRET_KEY = 'sk_test_51RCFf2CBervm4pgommp18lhLdTxzRwqbCJprKiBsT2D9sSlyoLWrBK7N6h0NQ7ntBHu8o0bfHhCkVJxXiyrpsqFL005yR4Vh7I',
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51RCFf2CBervm4pgome2T9z4wwK8ZRVqvtkc0Q7yFcHecQeAeqD3OFSNgUM0xCtgImr0ejlRIVkHIhf3YE81vdJR0000EENj89b'

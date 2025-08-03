@@ -10,3 +10,4 @@ class HotelDetailView(DetailView):
     model = Hotel
     template_name = 'hotels/hotel.html'
     context_object_name = 'hotels'
+

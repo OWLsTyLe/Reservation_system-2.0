@@ -8,8 +8,9 @@ from django.conf import settings
 import stripe
 from django.http import JsonResponse
 import json
+import os
 
-stripe.api_key = "sk_test_51RCFf2CBervm4pgommp18lhLdTxzRwqbCJprKiBsT2D9sSlyoLWrBK7N6h0NQ7ntBHu8o0bfHhCkVJxXiyrpsqFL005yR4Vh7I"
+stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
 
 def send_booking_confirmation(user_email, booking):
     subject = "Підтвердження бронювання"
@@ -66,7 +67,7 @@ def account(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'booking/acount.html', {
         'bookings': bookings,
-        'stripe_public_key': "pk_test_51RCFf2CBervm4pgome2T9z4wwK8ZRVqvtkc0Q7yFcHecQeAeqD3OFSNgUM0xCtgImr0ejlRIVkHIhf3YE81vdJR0000EENj89b",
+        'stripe_public_key': os.getenv("STRIPE_PUBLISHABLE_KEY"),
     })
 
 @login_required

@@ -5,9 +5,9 @@ from hotels.models import HotelRoom
 from .models import Booking
 from django.core.mail import send_mail
 import stripe
-from django.conf import settings
 from django.http import JsonResponse
 import json
+from django.conf import settings
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -62,7 +62,6 @@ def create_booking(request):
 def cancel_booking(request, booking_id):
     return redirect('home')
 
-@login_required
 def account(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'booking/acount.html', {

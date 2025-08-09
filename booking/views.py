@@ -4,8 +4,13 @@ from .forms import BookingForm
 from hotels.models import HotelRoom
 from .models import Booking
 from django.core.mail import send_mail
+import stripe
+from django.http import JsonResponse
+import json
 from django.conf import settings
 
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def send_booking_confirmation(user_email, booking):
     subject = "Підтвердження бронювання"
@@ -22,7 +27,6 @@ def send_booking_confirmation(user_email, booking):
 
     Дякуємо, що обрали наш сервіс!
     """
-
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user_email])
 
 @login_required
@@ -54,4 +58,68 @@ def create_booking(request):
 
     return render(request, 'booking/create_booking.html', {'form': form})
 
+@login_required
+def cancel_booking(request, booking_id):
+    return redirect('home')
 
+def account(request):
+    bookings = Booking.objects.filter(user=request.user)
+    return render(request, 'booking/acount.html', {
+        'bookings': bookings,
+        'stripe_public_key': settings.STRIPE_PUBLISHABLE_KEY,
+    })
+
+@login_required
+def create_checkout_session(request):
+    if request.method != 'POST':
+        return JsonResponse({'error': 'Invalid method'}, status=400)
+
+    data = json.loads(request.body)
+    booking_id = data.get('id')
+    try:
+        booking = Booking.objects.get(id=booking_id, user=request.user)
+    except Booking.DoesNotExist:
+        return JsonResponse({'error': 'Booking not found'}, status=404)
+
+    amount = int(booking.total_price() * 100)
+
+    session = stripe.checkout.Session.create(
+        payment_method_types=['card'],
+        line_items=[{
+            'price_data': {
+                'currency': 'uah',
+                'product_data': {
+                    'name': f'Бронювання {booking.room.hotel.name}',
+                },
+                'unit_amount': amount,
+            },
+            'quantity': 1,
+        }],
+        mode='payment',
+        success_url='http://127.0.0.1:8000/success/?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url='http://127.0.0.1:8000/cancel/',
+        metadata={
+            'booking_id': str(booking.id)
+        }
+    )
+
+    return JsonResponse({'sessionId': session.id})
+
+@login_required
+def payment_success(request):
+    session_id = request.GET.get('session_id')
+    if session_id:
+        try:
+            session = stripe.checkout.Session.retrieve(session_id)
+            booking_id = session.metadata.get('booking_id')
+            if booking_id:
+                booking = Booking.objects.get(id=booking_id, user=request.user)
+                booking.is_paid = True
+                booking.save()
+        except Exception as e:
+            print(f"Error in payment success handling: {e}")
+    return render(request, 'main/index.html')
+
+@login_required
+def payment_cancel(request):
+    return render(request, 'restourants/restourants.html')

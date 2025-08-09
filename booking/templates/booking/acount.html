@@ -5,29 +5,28 @@
   <meta charset="UTF-8">
   <title>Ваш профіль</title>
   <link rel="stylesheet" href="{% static 'main/css/acount.css' %}">
+<script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 <div class="content">
   <h1>Ваш профіль</h1>
   <p class="p">Вітаємо вас {{ user.username }}</p>
 
-  <h2>Ваші замовлення</h2>
-
+  <h2>Замовлення готелів</h2>
   {% if bookings %}
-  <div class="table">
-    <table>
-      <thead>
+  <table>
+    <thead>
       <tr>
         <th>Готель</th>
         <th>Тип номеру</th>
         <th>Ціна за ніч</th>
         <th>Дата заїзду</th>
         <th>Дата виїзду</th>
-        <th>Загальна ціна</th>
-        <th>Відмінити замовлення</th>
+        <th>Оплата</th>
+        <th>Скасування</th>
       </tr>
-      </thead>
-      <tbody>
+    </thead>
+    <tbody>
       {% for booking in bookings %}
       <tr>
         <td>{{ booking.room.hotel.name }}</td>
@@ -35,39 +34,128 @@
         <td>{{ booking.room.price_per_night }} грн</td>
         <td>{{ booking.start_date }}</td>
         <td>{{ booking.end_date }}</td>
-        <td></td>
-        <td><button class="btn" id="btn-сancel">ВІДМІНИТИ</button></td>
+        <td>
+          {% if not booking.is_paid %}
+            <button class="btn pay-button" data-type="booking" data-id="{{ booking.id }}">ОПЛАТИТИ</button>
+          {% else %}
+            <span style="color: green;">✅ Оплачено</span>
+          {% endif %}
+        </td>
+        <td>
+          <form method="post" action="{% url 'cancel_booking' booking.id %}">
+            {% csrf_token %}
+            <button class="btn" type="submit">ВІДМІНИТИ</button>
+          </form>
+        </td>
       </tr>
       {% endfor %}
-      </tbody>
-    </table>
-  </div>
+    </tbody>
+  </table>
   {% else %}
-  <p>У вас немає замовлень.</p>
+  <p>У вас немає замовлень готелів.</p>
   {% endif %}
+
+  <h2>Замовлення ресторанів</h2>
+  {% if reservations %}
+  <table>
+    <thead>
+      <tr>
+        <th>Ресторан</th>
+        <th>Номер столу</th>
+        <th>Дата бронювання</th>
+        <th>Оплата</th>
+        <th>Скасування</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for res in reservations %}
+      <tr>
+        <td>{{ res.table.restaurant.name }}</td>
+        <td>{{ res.table.number }}</td>
+        <td>{{ res.date|date:"Y-m-d" }} {{ res.time|time:"H:i" }}</td>
+        <td>
+          {% if not res.is_paid %}
+            <button class="btn pay-button" data-type="reservation" data-id="{{ res.id }}">ОПЛАТИТИ</button>
+          {% else %}
+            <span style="color: green;">✅ Оплачено</span>
+          {% endif %}
+        </td>
+        <td>
+          <form method="post" action="{% url 'cancel_reservation' res.id %}">
+            {% csrf_token %}
+            <button class="btn" type="submit">ВІДМІНИТИ</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>У вас немає замовлень ресторанів.</p>
+  {% endif %}
+
   <div class="form">
     <a href="{% url 'home' %}" class="btn1">На головну</a>
   </div>
 </div>
+
 <footer class="footer">
   <div class="footer-container">
-    <div class="copyright">
-      <p>&copy; 2025 Reservation-system.</p>
-    </div>
-    <div class="contact">
-      <p>Номер телефону: +3800000000000</p>
-      <p>Почта адміністрації: <a href="" target="_blank">reservation@gmail.com</a></p>
-    </div>
-    <div class="socials">
-      <a href="" class="socials-items">
-        <img class="img" src="{% static 'main/img/Instagram.svg' %}" alt="">
-      </a>
-      <a href="" class="socials-items">
-        <img class="img" src="{% static 'main/img/Twitter.svg' %}" alt="">
-      </a>
-    </div>
+    <p>&copy; 2025 Reservation-system.</p>
+    <p>Номер телефону: +3800000000000</p>
+    <p>Пошта адміністрації: <a href="mailto:reservation@gmail.com">reservation@gmail.com</a></p>
   </div>
 </footer>
-<!--Я короче откатился назад, и начну всё с начал, только теперь буду всё проверять-->
+
+
+<script>
+    const stripe = Stripe ("{{ stripe_public_key }}");
+
+  document.querySelectorAll(".pay-button").forEach(button => {
+    button.addEventListener("click", function () {
+      const id = this.dataset.id;
+      const type = this.dataset.type;
+
+      fetch("{% url 'create_checkout_session' %}", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": "{{ csrf_token }}",
+        },
+        body: JSON.stringify({
+          'id': id,
+          'type': type
+        }),
+      })
+      .then(res => res.json())
+      .then(data => {
+        if(data.sessionId) {
+          stripe.redirectToCheckout({ sessionId: data.sessionId });
+        } else {
+          alert("Помилка оплати. Спробуйте пізніше.");
+          console.error("No session ID in response");
+        }
+      })
+      .catch(e => console.error(e));
+    });
+  });
+  function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== "") {
+      const cookies = document.cookie.split(";");
+      for (let i = 0; i < cookies.length; i++) {
+        const cookie = cookies[i].trim();
+        if (cookie.substring(0, name.length + 1) === name + "=") {
+          cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+          break;
+        }
+      }
+    }
+    return cookieValue;
+  }
+  const csrfToken = getCookie("csrftoken");
+
+</script>
+
 </body>
 </html>

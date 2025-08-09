@@ -8,8 +8,17 @@ class Booking(models.Model):
     start_date = models.DateField()
     end_date = models.DateField(null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    is_paid = models.BooleanField(default=False)
 
     def __str__(self):
         room_info = self.room if self.room else "Unknown Room"
         user_info = self.user.username if self.user else "Anonymous"
         return f'Booking by {user_info} for {room_info}'
+
+    def total_price(self):
+        if self.end_date and self.start_date:
+            nights = (self.end_date - self.start_date).days
+            if nights < 1:
+                nights = 1
+            return self.room.price_per_night * nights
+        return self.room.price_per_night

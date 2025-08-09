@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Оплата</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <h2>Оплата бронювання столика</h2>
+    <button id="checkout-button">Оплатити</button>
+
+    <script>
+        const reservationId = "{{ reservation_id }}";
+        const stripe = Stripe("{{ stripe_public_key }}");
+
+        document.getElementById("checkout-button").addEventListener("click", () => {
+            fetch("/restaurants/create-checkout-session/", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ reservation_id: reservationId })
+            })
+            .then(res => res.json())
+            .then(data => {
+                return stripe.redirectToCheckout({ sessionId: data.id });
+            });
+        });
+    </script>
+</body>
+</html>

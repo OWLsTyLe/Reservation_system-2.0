@@ -4,13 +4,13 @@ from .forms import BookingForm
 from hotels.models import HotelRoom
 from .models import Booking
 from django.core.mail import send_mail
-from django.conf import settings
 import stripe
+from django.conf import settings
 from django.http import JsonResponse
 import json
-import os
 
-stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+
+stripe.api_key = settings.STRIPE_SECRET_KEY
 
 def send_booking_confirmation(user_email, booking):
     subject = "Підтвердження бронювання"
@@ -67,7 +67,7 @@ def account(request):
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'booking/acount.html', {
         'bookings': bookings,
-        'stripe_public_key': os.getenv("STRIPE_PUBLISHABLE_KEY"),
+        'stripe_public_key': settings.STRIPE_PUBLISHABLE_KEY,
     })
 
 @login_required
@@ -97,8 +97,8 @@ def create_checkout_session(request):
             'quantity': 1,
         }],
         mode='payment',
-        success_url=request.build_absolute_uri('/success/?session_id={CHECKOUT_SESSION_ID}'),
-        cancel_url=request.build_absolute_uri('/cancel/'),
+        success_url='http://127.0.0.1:8000/success/?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url='http://127.0.0.1:8000/cancel/',
         metadata={
             'booking_id': str(booking.id)
         }

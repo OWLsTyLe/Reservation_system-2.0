@@ -13,6 +13,7 @@
   <p class="p">Вітаємо вас {{ user.username }}</p>
 
   <h2>Замовлення готелів</h2>
+  <p>Ключ Stripe: {{ stripe_public_key }}</p>
   {% if bookings %}
   <table>
     <thead>
@@ -131,13 +132,13 @@
         if(data.sessionId) {
           stripe.redirectToCheckout({ sessionId: data.sessionId });
         } else {
+          alert("Помилка оплати. Спробуйте пізніше.");
           console.error("No session ID in response");
         }
       })
       .catch(e => console.error(e));
     });
   });
-
   function getCookie(name) {
     let cookieValue = null;
     if (document.cookie && document.cookie !== "") {

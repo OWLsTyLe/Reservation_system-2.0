@@ -19,6 +19,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
+from django.views.generic.base import RedirectView
+from booking import views as booking_views
+
 
 urlpatterns = [
     path("i18n/", include("django.conf.urls.i18n")),
@@ -27,6 +30,8 @@ urlpatterns = [
     path('restourants/', include('restourants.urls')),
     path('', include('users.urls')),
     path('booking/', include('booking.urls')),
+    path('account/', RedirectView.as_view(url='/booking/account/')),
+    path('success/', booking_views.payment_success, name='success')
 ]
 
 

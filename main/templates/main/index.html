@@ -22,7 +22,7 @@
             <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
             <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
             <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
-            <li><a href="{% url 'ackount' %}" class="btn">{% trans "Profile" %}</a></li>
+            <li><a href="{% url 'account' %}" class="btn">{% trans "Profile" %}</a></li>
             <li>
                 <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
                     {% csrf_token %}

@@ -201,13 +201,13 @@ STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 SITE_ID = 1
 
 AUTHENTICATION_BACKENDS = [
-    "django.contrib.auth.backends.ModelBackend",  # звичайний логін
-    "allauth.account.auth_backends.AuthenticationBackend",  # соц. мережі
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
 ]
 
-LOGIN_REDIRECT_URL = "home"    # куди редіректити після входу
+LOGIN_REDIRECT_URL = "home"
 # LOGOUT_REDIRECT_URL = "/"
-ACCOUNT_EMAIL_VERIFICATION = "none"  # або 'optional', якщо хочеш підтвердження
+ACCOUNT_EMAIL_VERIFICATION = "none"
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
 SOCIALACCOUNT_QUERY_EMAIL = True

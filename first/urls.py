@@ -31,7 +31,8 @@ urlpatterns = [
     path('', include('users.urls')),
     path('booking/', include('booking.urls')),
     path('account/', RedirectView.as_view(url='/booking/account/')),
-    path('success/', booking_views.payment_success, name='success')
+    path('success/', booking_views.payment_success, name='success'),
+    path('accounts/', include('allauth.urls')),
 ]
 
 

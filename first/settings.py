@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     "allauth.socialaccount",
     "allauth.socialaccount.providers.google",
 
+    'modeltranslation',
     'main',
     'hotels',
     'restourants',

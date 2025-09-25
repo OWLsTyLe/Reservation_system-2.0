@@ -20,9 +20,9 @@
                         <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}" class="hotel-image">
                     </div>
                     {% endif %}
-                    <h2>{{ hotel.name }}</h2>
+                    <h2>{{ hotel.name|safe }}</h2>
                     <p><i class="bi bi-star" style="color: gold; font-size: 1.5rem;"></i>{{ hotel.rating }}</p>
-                    <p>{{ hotel.description }}</p>
+                    <p>{{ hotel.description|safe }}</p>
                 </div>
             </a>
     {% endfor %}

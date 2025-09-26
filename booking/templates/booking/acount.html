@@ -56,7 +56,7 @@
   {% endif %}
 
   <h2>Замовлення ресторанів</h2>
-  {% if reservations %}
+{% if reservations %}
   <table>
     <thead>
       <tr>
@@ -90,9 +90,10 @@
       {% endfor %}
     </tbody>
   </table>
-  {% else %}
+{% else %}
   <p>У вас немає замовлень ресторанів.</p>
-  {% endif %}
+{% endif %}
+
 
   <div class="form">
     <a href="{% url 'home' %}" class="btn1">На головну</a>

@@ -14,8 +14,8 @@
 {%block content%}
 <div class="container">
     <div class="features">
-        <h1>{{ hotels.name }}</h1>
-        <h2>{{ hotels.description }}</h2>
+        <h1>{{ hotels.name|safe }}</h1>
+        <h2>{{ hotels.description|safe }}</h2>
         <p>Rating: {{ hotels.rating }}</p>
     </div>
     <div class="button">

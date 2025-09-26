@@ -33,7 +33,7 @@
                     </select>
                 </form>
             </li>
-            <li><a href="{% url 'login' %}" class="btn bi bi-box-arrow-in-right login"> Увійти</a></li>
+            <li><a href="{% url 'login' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Увійти" %}</a></li>
         </ul>
     </aside>
     <div class="content-overlay">
@@ -63,8 +63,8 @@
             <p>&copy; 2025 Reservation-system.</p>
         </div>
         <div class="contact">
-            <p>Номер телефону: +3800000000000</p>
-            <p>Почта адміністрації: <a href="" target="_blank">reservation@gmail.com</a></p>
+            <p>{% trans "Номер телефону" %}: +3800000000000</p>
+            <p>{% trans "Пошта адміністрації" %}: <a href="" target="_blank">reservation@gmail.com</a></p>
         </div>
         <div class="socials">
             <a href="" class="socials-items">

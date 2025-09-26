@@ -1,5 +1,6 @@
 {% load static %}
 {% load socialaccount %}
+{% load i18n %}
 <!doctype html>
 <html lang="en">
 <head>
@@ -88,7 +89,7 @@
 <div class="background-container">
     <img class="background-image" src="{% static 'main/img/photo_2025-01-08 13.18.14.jpg' %}" alt="Background">
     <div class="form-container">
-        <h1 class="form-title text-primary">Система реєстрації</h1>
+        <h1 class="form-title text-primary">{% trans "Реєстрація" %}</h1>
         <form method="POST" novalidate>
             {% csrf_token %}
             {{ form.non_field_errors }}
@@ -112,12 +113,12 @@
                 {{ form.password2 }}
                 {{ form.password2.errors }}
             </div>
-            <button type="submit" class="btn btn-primary w-100">Зареєструватися</button>
-            <a href="{% url 'login' %}">Вже зареєстровані?</a>
+            <button type="submit" class="btn btn-primary w-100">{% trans "Зарєструйтесь" %}</button>
+            <a href="{% url 'login' %}">{% trans "Вже зареєстровані?" %}</a>
             <hr>
 
                 <a href="{% provider_login_url 'google' %}" class="btn btn-danger">
-                 <i class="bi bi-google"></i> Увійти через Google
+                 <i class="bi bi-google"></i> {% trans "Увійти через Google" %}
                 </a>
         </form>
     </div>

@@ -1,5 +1,6 @@
 <!doctype html>
 {% load static %}
+{% load i18n %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,8 +20,8 @@
         <p>Rating: {{ hotels.rating }}</p>
     </div>
     <div class="button">
-        <a class="btn1" href="{% url 'create_booking' %}" >Бронювати </a>
-        <a class="btn1" href="{% url 'hotels' %}" >Інші готелі</a>
+        <a class="btn1" href="{% url 'create_booking' %}" >{% trans "Бронювати" %}</a>
+        <a class="btn1" href="{% url 'hotels' %}" >{% trans "Інші готелі" %}</a>
     </div>
 </div>
 {%endblock%}

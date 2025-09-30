@@ -1,29 +1,30 @@
 {% load static %}
+{% load i18n %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ваш профіль</title>
+  <title>{% trans "Ваш профіль" %}</title>
   <link rel="stylesheet" href="{% static 'main/css/acount.css' %}">
 <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
 <div class="content">
-  <h1>Ваш профіль</h1>
-  <p class="p">Вітаємо вас {{ user.username }}</p>
+  <h1>{% trans "Ваш профіль" %}</h1>
+  <p class="p">{% trans "Вітаємо Вас" %} {{ user.username }}</p>
 
-  <h2>Замовлення готелів</h2>
+  <h2>{% trans "Ваші бронювання" %}</h2>
   {% if bookings %}
   <table>
     <thead>
       <tr>
-        <th>Готель</th>
-        <th>Тип номеру</th>
-        <th>Ціна за ніч</th>
-        <th>Дата заїзду</th>
-        <th>Дата виїзду</th>
-        <th>Оплата</th>
-        <th>Скасування</th>
+        <th>{% trans "Готелі" %}</th>
+        <th>{% trans "Тип номеру" %}</th>
+        <th>{% trans "Ціна за ніч" %}</th>
+        <th>{% trans "Дата заїзду" %}</th>
+        <th>{% trans "Дата виїзду" %}</th>
+        <th>{% trans "Оплата" %}</th>
+        <th>{% trans "Скасування" %}</th>
       </tr>
     </thead>
     <tbody>
@@ -36,15 +37,15 @@
         <td>{{ booking.end_date }}</td>
         <td>
           {% if not booking.is_paid %}
-            <button class="btn pay-button" data-type="booking" data-id="{{ booking.id }}">ОПЛАТИТИ</button>
+            <button class="btn pay-button" data-type="booking" data-id="{{ booking.id }}">{% trans "Оплатити" %}</button>
           {% else %}
-            <span style="color: green;">✅ Оплачено</span>
+            <span style="color: green;">✅ {% trans "Оплачено" %}</span>
           {% endif %}
         </td>
         <td>
           <form method="post" action="{% url 'cancel_booking' booking.id %}">
             {% csrf_token %}
-            <button class="btn" type="submit">ВІДМІНИТИ</button>
+            <button class="btn" type="submit">{% trans "Відмінити" %}</button>
           </form>
         </td>
       </tr>
@@ -55,51 +56,52 @@
   <p>У вас немає замовлень готелів.</p>
   {% endif %}
 
-  <h2>Замовлення ресторанів</h2>
-{% if reservations %}
-  <table>
-    <thead>
-      <tr>
-        <th>Ресторан</th>
-        <th>Номер столу</th>
-        <th>Дата бронювання</th>
-        <th>Оплата</th>
-        <th>Скасування</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for res in reservations %}
-      <tr>
-        <td>{{ res.table.restaurant.name }}</td>
-        <td>{{ res.table.number }}</td>
-        <td>{{ res.date|date:"Y-m-d" }} {{ res.time|time:"H:i" }}</td>
-        <td>
-          {% if not res.is_paid %}
-            <button class="btn pay-button" data-type="reservation" data-id="{{ res.id }}">ОПЛАТИТИ</button>
-          {% else %}
-            <span style="color: green;">✅ Оплачено</span>
-          {% endif %}
-        </td>
-        <td>
-          <form method="post" action="{% url 'cancel_reservation' res.id %}">
-            {% csrf_token %}
-            <button class="btn" type="submit">ВІДМІНИТИ</button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-{% else %}
-  <p>У вас немає замовлень ресторанів.</p>
-{% endif %}
+<!--  <h2>Замовлення ресторанів</h2>-->
+<!--{% if reservations %}-->
+<!--  <table>-->
+<!--    <thead>-->
+<!--      <tr>-->
+<!--        <th>Ресторан</th>-->
+<!--        <th>Номер столу</th>-->
+<!--        <th>Дата бронювання</th>-->
+<!--        <th>Оплата</th>-->
+<!--        <th>Скасування</th>-->
+<!--      </tr>-->
+<!--    </thead>-->
+<!--    <tbody>-->
+<!--      {% for res in reservations %}-->
+<!--      <tr>-->
+<!--        <td>{{ res.table.restaurant.name }}</td>-->
+<!--        <td>{{ res.table.number }}</td>-->
+<!--        <td>{{ res.date|date:"Y-m-d" }} {{ res.time|time:"H:i" }}</td>-->
+<!--        <td>-->
+<!--          {% if not res.is_paid %}-->
+<!--            <button class="btn pay-button" data-type="reservation" data-id="{{ res.id }}">ОПЛАТИТИ</button>-->
+<!--          {% else %}-->
+<!--            <span style="color: green;">✅ Оплачено</span>-->
+<!--          {% endif %}-->
+<!--        </td>-->
+<!--        <td>-->
+<!--          <form method="post" action="{% url 'cancel_reservation' res.id %}">-->
+<!--            {% csrf_token %}-->
+<!--            <button class="btn" type="submit">ВІДМІНИТИ</button>-->
+<!--          </form>-->
+<!--        </td>-->
+<!--      </tr>-->
+<!--      {% endfor %}-->
+<!--    </tbody>-->
+<!--  </table>-->
+<!--{% else %}-->
+<!--  <p>У вас немає замовлень ресторанів.</p>-->
+<!--{% endif %}-->
 
 
   <div class="form">
-    <a href="{% url 'home' %}" class="btn1">На головну</a>
+    <a href="{% url 'home' %}" class="btn1">{% trans "На головну" %}</a>
   </div>
 </div>
 
+<<<<<<< HEAD
 <!--<footer class="footer">-->
 <!--  <div class="footer-container">-->
 <!--    <p>&copy; 2025 Reservation-system.</p>-->
@@ -107,6 +109,15 @@
 <!--    <p>Пошта адміністрації: <a href="mailto:reservation@gmail.com">reservation@gmail.com</a></p>-->
 <!--  </div>-->
 <!--</footer>-->
+=======
+<footer class="footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Reservation-system.</p>
+    <p>{% trans "Номер телефону" %}: +3800000000000</p>
+    <p>{% trans "Пошта адміністрації" %}: <a href="mailto:reservation@gmail.com">reservation@gmail.com</a></p>
+  </div>
+</footer>
+>>>>>>> main
 
 
 <script>

@@ -41,13 +41,83 @@ msgstr "Hotels"
 msgid "Ресторани"
 msgstr "Restaurants"
 
-
 #: main/templates/main/index.html:22
 msgid "Профіль"
 msgstr "Profile"
 
-
 #: main/templates/main/index.html:40
 msgid "ЗАБРОНЮЙТЕ ІДЕАЛЬНЕ МІСЦЕ ДЛЯ ВІДПОЧИНКУ АБО ВЕЧЕРІ У НАС"
 msgstr "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
+
+msgid "Увійти"
+msgstr "Login"
+
+msgid "Тип номеру"
+msgstr "Room type"
+
+msgid "Ціна за ніч"
+msgstr "Price per night"
+
+msgid "Дата заїзду"
+msgstr "Check-in date"
+
+msgid "Дата виїзду"
+msgstr "Departure date"
+
+msgid "Оплата"
+msgstr "Payment"
+
+msgid "Скасування"
+msgstr "Abolition"
+
+msgid "Вітаємо Вас"
+msgstr "We congratulate you"
+
+msgid "Ваш профіль"
+msgstr "Your profile"
+
+msgid "Ваші бронювання"
+msgstr "Your reservations"
+
+msgid "Оплатити"
+msgstr "Pay"
+
+msgid "Оплачено"
+msgstr "Payid"
+
+msgid "Відмінити"
+msgstr "Cancel"
+
+msgid "На головну"
+msgstr "On the main one"
+
+msgid "Номер телефону"
+msgstr "Phone number"
+
+msgid "Пошта адміністрації"
+msgstr "Administration mail"
+
+msgid "Бронювати"
+msgstr "Book"
+
+msgid "Інші готелі"
+msgstr "Other hotels"
+
+msgid "Вхід до системи"
+msgstr "Login to the system"
+
+msgid "Ще не маєте облікового запису?"
+msgstr "Don't have an account yet?"
+
+msgid "Зарєструйтесь"
+msgstr "Sign up"
+
+msgid "Реєстрація"
+msgstr "Registration"
+
+msgid "Вже зареєстровані"
+msgstr "Already registered"
+
+msgid "Увійти через Google"
+msgstr "Sign in with Google"
 

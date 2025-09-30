@@ -1,0 +1,128 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f0f4ff;
+    color: #333;
+}
+
+.background-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6) blur(2px);
+    z-index: 1;
+}
+
+.form-container {
+    position: relative;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+.form-title {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    text-align: center;
+    color: #2136ff;
+}
+
+.form-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #2136ff;
+}
+
+.form-container input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.form-container input:focus {
+    border-color: #0942ff;
+    box-shadow: 0 0 8px rgba(22, 54, 211, 0.3);
+    outline: none;
+}
+
+
+.form-container .btn-primary {
+    background: linear-gradient(135deg, #9d95ee, #4e3eee);
+    border: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    border-radius: 10px;
+    transition: background 0.7s ease, transform 0.8s ease, box-shadow 0.5s ease;
+    width: 100%;
+}
+
+.form-container .btn-primary:hover {
+    background: linear-gradient(135deg, #493ef8, #9b93f5);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.form-container a {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #4e73df;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.form-container a:hover {
+    color: #ff0000;
+}
+
+.form-container p {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+/*!* Адаптивність *!*/
+/*@media (max-width: 576px) {*/
+/*    .form-container {*/
+/*        padding: 30px 20px;*/
+/*        border-radius: 15px;*/
+/*    }*/
+
+/*    .form-title {*/
+/*        font-size: 1.6rem;*/
+/*    }*/
+/*}*/

@@ -38,6 +38,9 @@ msgstr "Heim"
 msgid "Hotels"
 msgstr "Hotels"
 
+msgid "Готелі"
+msgstr "Hotels"
+
 #: main/templates/main/index.html:24
 msgid "Restaurants"
 msgstr "Restaurants"
@@ -49,3 +52,76 @@ msgstr "Profil"
 #: main/templates/main/index.html:48
 msgid "Book the perfect place for rest or dinner with us"
 msgstr "Buchen Sie bei uns den perfekten Ort zum Ausruhen oder Abendessen"
+
+
+msgid "Увійти"
+msgstr "Anmelden"
+
+msgid "Тип номеру"
+msgstr "Nummerntyp"
+
+msgid "Ціна за ніч"
+msgstr "Preis pro Nacht"
+
+msgid "Дата заїзду"
+msgstr "Check-in-Datum"
+
+msgid "Дата виїзду"
+msgstr "Abreisedatum"
+
+msgid "Оплата"
+msgstr "Zahlung"
+
+msgid "Скасування"
+msgstr "Abschaffung"
+
+msgid "Вітаємо Вас"
+msgstr "Wir gratulieren Ihnen"
+
+msgid "Ваш профіль"
+msgstr "Ihr Profil"
+
+msgid "Ваші бронювання"
+msgstr "Ihre Reservierungen"
+
+msgid "Оплатити"
+msgstr "Zahlen"
+
+msgid "Оплачено"
+msgstr "Dezahlt"
+
+msgid "Відмінити"
+msgstr "Stornieren"
+
+msgid "На головну"
+msgstr "Auf der Hauptseite"
+
+msgid "Номер телефону"
+msgstr "Telefonnummer"
+
+msgid "Пошта адміністрації"
+msgstr "Verwaltungsmail"
+
+msgid "Бронювати"
+msgstr "Buch"
+
+msgid "Інші готелі"
+msgstr "Andere Hotels"
+
+msgid "Вхід до системи"
+msgstr "Melden Sie sich beim System an"
+
+msgid "Ще не маєте облікового запису?"
+msgstr "Sie haben noch kein Konto?"
+
+msgid "Зарєструйтесь"
+msgstr "Melden Sie sich an"
+
+msgid "Реєстрація"
+msgstr "Anmeldung"
+
+msgid "Вже зареєстровані?"
+msgstr "Bereits registriert?"
+
+msgid "Увійти через Google"
+msgstr "Melden Sie sich mit Google an"

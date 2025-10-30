@@ -2,7 +2,7 @@ from modeltranslation.translator import translator, TranslationOptions
 from .models import Hotel, RoomType, HotelRoom
 
 class HotelTranslationOptions(TranslationOptions):
-    fields = ('name', 'description', 'address',)
+    fields = ('name', 'description', 'address', 'sity')
 
 translator.register(Hotel, HotelTranslationOptions)
 

@@ -5,7 +5,8 @@ class Hotel(models.Model):
     image = models.ImageField(upload_to='', blank=True, null=True)
     description = models.TextField(max_length=9999)
     rating = models.DecimalField(max_digits=5, decimal_places=1, default=0.0)
-    address = models.CharField(max_length=200, default='Unknown address')  # Переконайтесь, що це поле існує
+    address = models.CharField(max_length=200, default='Unknown address')
+    sity = models.CharField(max_length=200, default="Kyiv")
     phone_number = models.CharField(max_length=20)
 
     def __str__(self):

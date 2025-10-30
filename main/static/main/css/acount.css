@@ -237,5 +237,8 @@ footer .footer-container .contact p {
     display: block;
     margin: 10px 0;
 }
-
+.pay-button::before {
+    content: "💳";
+    font-size: 1.3rem;
+}
 

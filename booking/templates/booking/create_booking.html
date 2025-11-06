@@ -11,13 +11,13 @@
     <link rel="stylesheet" href="{% static 'main/css/Create_booking.css' %}">
 </head>
 <body>
-    <div class="center-container">
-            <h1>BOOKING A ROOMS</h1>
-            <form method="POST" class="booking-form">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button type="submit">Book Now</button>
-            </form>
+    <div class="center-container"></div>
+    <h1>bookin a rooms</h1>
+        <form method="POST" class="booking-form">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Book Now</button>
+        </form>
     </div>
 </body>
 </html>

@@ -1,244 +1,147 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-
-}
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
-
+/* ---------- Основні стилі ---------- */
 body {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    font-family: 'Arial', sans-serif;
-    color: #f3d0a4;
-    /*background-image: url('bg.png');*/
-    background-color: lightyellow;
-    min-height: 100vh;
-    /*background-repeat: no-repeat;*/
-    /*background-attachment: fixed;*/
-    /*background-size: cover;*/
-    /*background-position: center;*/
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+    background: linear-gradient(135deg, #e8edf3, #f9fafc);
+    color: #222;
 }
 
-h1{
-    text-align: center;
-    font-size: 50px;
+/* Контейнер */
+.content {
+    max-width: 1100px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    animation: fadeIn 0.6s ease;
 }
-.p{
+
+/* Заголовки */
+h1, h2 {
     text-align: center;
-    font-size: 50px;
+    font-weight: 700;
+    color: #2e3a53;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
 }
 
 h2 {
+    margin-top: 40px;
+}
+.btn-success{
+    box-shadow:0 5px 15px rgba(0, 128, 0, 1.2) ;
+}
+.btn-danger{
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 1.2);
+}
+
+/* Привітання */
+.p {
     text-align: center;
-    font-size: 35px;
-    margin: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    color: #5a6b84;
 }
 
-ul {
-    display: block;
-    padding: 0;
-    margin: 0 auto;
-    list-style-type: none;
-}
-
-li {
-    display: inline;
-    margin-bottom: 20px;
-    max-width: 600px;
-}
-div{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-table{
-    border-radius: 16px;
-    width: 800px;
-    height: auto;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+/* ----------- Таблиця бронювань ----------- */
+table {
+    width: 100%;
     border-collapse: collapse;
-    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 12px;
     overflow: hidden;
-}
-table thead tr th{
-    height: 50px;
-    text-align: center;
-    padding: 5px;
-    /*border: 2px solid black;*/
-}
-table tbody tr td{
-    height: 65px;
-    text-align: center;
-    padding: 5px;
-    /*border: 2px solid black;*/
-}
-thead tr th:nth-child(1){
-    background-color: #660e68 ;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
-thead tr th:nth-child(2){
-    background-color: #660e68;
-}
-thead tr th:nth-child(3){
-    background-color: #660e68;
-}
-thead tr th:nth-child(4){
-    background-color: #660e68;
-}
-thead tr th:nth-child(5){
-    background-color: #660e68;
-}
-thead tr th:nth-child(6){
-    background-color: #660e68;
-}
-thead tr th:nth-child(7){
-    background-color: #660e68;
-    color: #F3D0A4;
-}
-tbody tr:nth-child(odd) td:nth-child(odd) {
-    background-color: #efefef;
-    font-size: 18px;
-    color: darkorange;
-}
-tbody tr:nth-child(odd) td:nth-child(even) {
-    background-color: white;
-    font-size: 18px;
-    color: darkorange;
-}
-tbody tr:nth-child(even) td:nth-child(odd) {
-    background-color: #e5e5e5;
-    font-size: 18px;
-    color: darkorange;
-}
-tbody tr:nth-child(even) td:nth-child(even) {
-    background-color: #F3F3F3;
-    font-size: 18px;
-    color: darkorange;
-}
-
-.btn {
-    background-color: rebeccapurple;
-    width: 85px;
-    height: 35px;
-    font-size: 13px;
-    text-align: center;
+thead {
+    background: #2e3a53;
     color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    text-shadow:
-            0 0 1px wheat,
-            0 0 5px lightyellow,
-            0 0 7px white;
-}
-.btn:hover {
-    background-color: #772199;
-    transform: translateX(-2px) translateY(-2px);
-    box-shadow: 5px 5px 0 #6963A1;
-    text-shadow:
-            0 0 1px darkred,
-            0 0 5px red,
-            0 0 7px white;
 }
 
+th, td {
+    padding: 14px 18px;
+    text-align: center;
+    font-size: 15px;
+}
+
+tbody tr:nth-child(even) {
+    background: #f5f7fa;
+}
+
+tbody tr:hover {
+    background: #ebf0f7;
+    transition: 0.3s;
+}
+
+/* ----------- Кнопки ----------- */
+.btn, .btn1, .pay-button {
+    padding: 10px 18px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    transition: 0.3s ease;
+}
+
+/* Синя кнопка */
+.btn, .pay-button {
+    background: #3a6ff7;
+    color: white;
+}
+
+.btn:hover, .pay-button:hover {
+    background: #275aea;
+    transform: translateY(-1px);
+}
+
+/* Кнопка назад */
 .btn1 {
-    padding: 15px 40px;
-    font-size: 18px;
-    color: #f6a99e;
-    background: lightyellow;
-    /*border: 2px solid #a76f82;*/
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    border: 3px solid #f6a71d;
-    margin: 10px;
-    transition: all 0.3s ease-in-out;
-    /*box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);*/
+    display: inline-block;
+    background: #2e3a53;
+    color: white;
     text-decoration: none;
+    margin-top: 20px;
 }
 
 .btn1:hover {
-    /*background: #a76f82;*/
-    /*border-color: #f3d0a4;*/
-    color: #660e60;
-    box-shadow: 0 0 30px rgba(243, 208, 164, 0.8);
-    border: 3px solid #660e60;
+    background: #1e293d;
+    transform: translateY(-1px);
 }
 
-.form{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.content{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+/* ----------- Футер ----------- */
+.footer {
+    background: #2e3a53;
+    padding: 25px 0;
+    margin-top: 60px;
+    color: white;
 }
 
-.footer{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background: #0B0D17;
-    color : #D9D8E1;
-    position: relative;
-}
-
-.footer-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto ;
-    width: 1500px;
-    height: 60px;
-}
-.footer-copyright{
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
     font-size: 14px;
 }
-.socials{
-    display: flex;
+
+.footer a {
+    color: #9ecbff;
+    text-decoration: none;
 }
 
-.socials-item{
-    margin-left: 16px;
-    cursor: pointer;
+.footer a:hover {
+    text-decoration: underline;
 }
 
-
-.img{
-    padding: 5px;
-    width: 100%;
-    height: auto;
+/* ----------- Анімація ---------- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
 }
-
-.img:hover{
-    opacity: 0.5;
-    background: lightgray;
-    border-radius: 50%;
-}
-
-.contact{
-    display: block;
-    justify-content: center;
-    align-items: center;
-
-}
-footer .footer-container .contact p {
-    display: block;
-    margin: 10px 0;
-}
-.pay-button::before {
-    content: "💳";
-    font-size: 1.3rem;
-}
-

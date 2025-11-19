@@ -1,14 +1,46 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
     min-height: 100vh;
     font-family: 'Arial', sans-serif;
     background-color: lightyellow;
     /*background: #660e60;*/
-    /*background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
-    color: #f3d0a4;
+    /*backgrou
+    color: #f3d0a4;nd: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);*/
+}
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    flex: 1;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.header-btn-container{
+    height: 48px;
+    width: 48px;
+    bottom: 30px;
+    left: 50%;
+    transform: translate(-50%,0);
+    position: absolute;
+    z-index: 11;
+}
+
+.btn-main{
+    height: 48px;
+    width: 48px;
+    bottom: 30px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #fff;
 }
 
 .center-container {
@@ -19,34 +51,79 @@ body, html {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 aside {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
-    padding: 20px 0;
     background: none;
 }
 
 aside ul {
     list-style: none;
-    padding: 0;
+    padding: 10px;
     margin: 0;
+    gap: 10px;
+    min-width: 100%;
     display: flex;
-    justify-content: center;
-    gap: 20px;
+    justify-content: right;
+    position: relative;
+    z-index: 10;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.aside-slider{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* ниже меню */
+    pointer-events: auto; /* клики проходят на меню */
+    overflow: hidden;
 }
 
+.aside-slider .slider-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.aside-slider .slider-img.active {
+    opacity: 1;
+}
+
+.aside-slider .over {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2; /* выше слайдов, но ниже меню кнопок */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 40px;
+    pointer-events: none; /* текст не мешает кликам */
+}
 /* Стилі для кнопок */
 .btn {
-    padding: 15px 40px;
+    padding: 15px 20px;
     font-size: 18px;
-    color: #f6a99e;
-    background: lightyellow;
+    color: black;
+    border: none;
+    outline: none;
     /*border: 2px solid #a76f82;*/
-    border-radius: 30px;
     text-transform: uppercase;
     font-weight: bold;
     transition: all 0.3s ease-in-out;
@@ -55,15 +132,12 @@ aside ul {
 }
 
 .btn:hover {
-    /*background: #a76f82;*/
-    /*border-color: #f3d0a4;*/
-    color: #660e60;
-    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
+    color: darkred;
+    text-shadow: 1px 1px 2px #ffffff;
 }
 
 .hotels-list {
     display: flex;
-    width: 1000px;
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
@@ -93,8 +167,7 @@ aside ul {
 }
 
 .hotel-card img {
-    width: 250px;
-    border-radius: 50px;
+    width: 100%;
     height: auto;
     border-bottom: 2px solid #660e60;
     opacity: 0.6;
@@ -185,12 +258,15 @@ aside ul {
 
 /*!*Стилі для картинок*!*/
 
-
+/*img{*/
+/*    border-radius: 50px;*/
+/*    width: 1600px;*/
+/*    height: 860px;*/
+/*}*/
 .over{
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: absolute;
+    top: 0;
+    left: 0;
     width: 1200px;
     height: 860px;
     font-size: 60px;
@@ -199,7 +275,21 @@ aside ul {
     padding: 80px;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s ease, visibility 1s ease;
+    z-index: 2;
 }
+.over.actives{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/*Зараз спробую зробити хочаб якісь стилі для списка мов*/
 .select-language{
     display: flex;
     appearance: none;
@@ -207,12 +297,11 @@ aside ul {
     padding-right: 30px;
     justify-content: center;
     align-items: center;
-    background: lightyellow url("data:image/svg+xml;charset=UTF-8,<svg fill='%23f6a99e' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background: url("data:image/svg+xml;charset=UTF-8,<svg fill='%23f6a99e' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
     border: none;
     outline: none;
     box-shadow: none;
-    color: #f6a99e;
-    border-radius: 40px;
+    color: black;
     width: 100px;
     height: 60px;
     font-size: 18px;
@@ -222,22 +311,47 @@ aside ul {
     text-align: center;
 }
 .select-language:hover{
-    color: #660e60;
-    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
+    color: darkred;
+    text-shadow: 1px 1px 2px #ffffff;
 }
 
 .select-language option{
     border-radius: 40px;
     cursor: pointer;
+    background: none;
 }
+/*.img-container1{*/
+/*    display: flex;*/
+/*    gap: 20px;*/
+/*}*/
+
+/*img {*/
+/*    width: 800px;*/
+/*    height: auto;*/
+/*    opacity: 0;*/
+/*    transform: translateX(-100%);*/
+/*    animation: fly-in 1s ease-out forwards;*/
+/*}*/
+
+/*.delay1 {*/
+/*    animation-delay: 0.3s;*/
+/*}*/
+/*@keyframes fly-in {*/
+/*    to{*/
+/*        opacity: 1;*/
+/*        transform: translateX(0);*/
+/*    }*/
+/*}*/
+
 /*footer*/
 .footer{
     display: flex;
     align-items: center;
-
     height: 80px;
     background: #0B0D17;
     color : #D9D8E1;
+    position: relative;
+    margin-top: auto;
 }
 
 .footer-container{
@@ -260,15 +374,17 @@ aside ul {
 }
 
 
-.img{
+.socials .img{
     padding: 5px;
     width: 100%;
     height: auto;
+    border-radius: 50%;
 }
 
-.img:hover{
+.socials .img:hover{
     opacity: 0.5;
     background: lightgray;
+
 }
 
 .contact{
@@ -280,5 +396,124 @@ aside ul {
 footer .footer-container .contact p {
     display: block;
     margin: 10px 0;
+}
+
+/*style for slider*/
+
+/*.img-container {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    margin: 40px auto;*/
+/*    overflow: hidden;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+/*.slider {*/
+/*    position: relative;*/
+/*    width: 100%;*/
+
+/*}*/
+
+/*.img-container .slider .slider-img {*/
+/*    position: absolute;*/
+/*    width: 100%;*/
+/*    height: 100%;*/
+/*    object-fit: cover;*/
+/*    top: 0;*/
+/*    left: 0;*/
+/*    opacity: 0;*/
+/*    transition: opacity 1s ease-in-out;*/
+/*    z-index: 0;*/
+/*    border-radius: 20px;*/
+/*}*/
+
+/*.img-container .slider .slider-img.active {*/
+/*    opacity: 1;*/
+/*    z-index: 1;*/
+/*}*/
+
+.controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    z-index: 11;
+    border-radius: 50%;
+    padding: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.controls:hover {
+    opacity: 0.7;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+    left: 30px;
+}
+
+.next {
+    right: 30px;
+}
+
+/*Style for hotel*/
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #ff8500;
+}
+
+.features{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.button{
+    margin: 10px;
+}
+
+a{
+    text-decoration: none;
+}
+.btn1 {
+    margin: 15px;
+    padding: 15px 40px;
+    font-size: 18px;
+    color: #f6a99e;
+    background: lightyellow;
+    /*border: 2px solid #a76f82;*/
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-bottom: 15px;
+    border: 3px solid #f6a71d;
+    transition: all 0.3s ease-in-out;
+    /*box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);*/
+    text-decoration: none;
+}
+
+
+.btn1:hover {
+    /*background: #a76f82;*/
+    /*border-color: #f3d0a4;*/
+    color: #660e60;
+    box-shadow: 0 0 30px rgba(243, 208, 164, 0.8);
+    border: 3px solid #660e60;
+}
+
+.button {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 15px 15px;
+    padding-bottom: 15px ;
 }
 

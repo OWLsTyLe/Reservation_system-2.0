@@ -16,9 +16,8 @@
     <link rel="stylesheet" href="{% static 'main/css/index.css' %}?v=2">
     {% endblock %}
 </head>
-<body>
-<div class="center-container">
-    <aside>
+<body class="page-wrapper">
+    <aside class="aside">
         <ul>
             <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
             <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
@@ -36,27 +35,38 @@
             </li>
             <li><a href="{% url 'login' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Увійти" %}</a></li>
         </ul>
+        {% block div %}
+                <div class="aside-slider">
+                    <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image" class="slider-img active">
+                    <div class="over actives">{% trans "Book the perfect place for rest or dinner with us" %}</div>
+                    <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img">
+                    <div class="over">Тут Буде якийсь текст, но мені зараз впадлу його придумувати</div>
+                    <!--Ці картинки що знизу коментаря це картинки перемикання слайда, треба буде їх змінити на кнопки-->
+                    <img src="{% static 'main/img/left.png' %}" class="prev controls">
+                    <img src="{% static 'main/img/right.png' %}" class="next controls">
+                </div>
+        {% endblock %}
+        {% block a%}
+        <div class="header-btn-container">
+            <a href="#main-content" class="btn-main">Enter</a>
+        </div>
+        {% endblock %}
     </aside>
     <div class="content-overlay">
         <main>
             {% block content %}{% endblock %}
         </main>
     </div>
-</div>
-
-{% block div %}
-<div class="img-container">
-    <div class="slider">
-        <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image" class="slider-img active">
-        <div class="over actives">{% trans "Book the perfect place for rest or dinner with us" %}</div>
-        <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img">
-        <div class="over">Тут Буде якийсь текст, но мені зараз впадлу його придумувати</div>
-        <!--Ці картинки що знизу коментаря це картинки перемикання слайда, треба буде їх змінити на кнопки-->
-        <img src="{% static 'main/img/left.png' %}" class="prev controls">
-        <img src="{% static 'main/img/right.png' %}" class="next controls">
-    </div>
-</div>
+{% block main %}
+<main class="main-content" id="main-content">
+    <h1>Тут буде якийсь контет</h1>
+    <p>Короче контент скоро буде, але я не знаю коли<br>
+        Чекайте, скоро все налагодиться
+    </p>
+</main>
 {% endblock %}
+
+
 {% block footer %}
 <footer class="footer">
     <div class="footer-container">

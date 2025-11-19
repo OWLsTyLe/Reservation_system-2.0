@@ -24,4 +24,10 @@ controls.forEach(control => {
     });
 });
 
-showSlide(currentIndex);
+
+setInterval(() => {
+    let index = currentIndex + 1;
+    if (index >= images.length) index = 0;
+    showSlide(index);
+}, 5000);
+

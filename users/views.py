@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate
 from .forms import RegisterForm, LoginForm
+from django.contrib.auth import logout
+
 
 def register(request):
     if request.method == 'POST':
@@ -31,3 +33,7 @@ def login_view(request):
 
 def home(request):
     return render(request, 'users/home.html')
+
+def user_logout(request):
+    logout(request)
+    return redirect('home')

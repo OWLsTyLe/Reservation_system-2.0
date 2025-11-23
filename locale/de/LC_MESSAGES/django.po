@@ -57,6 +57,9 @@ msgstr "Buchen Sie bei uns den perfekten Ort zum Ausruhen oder Abendessen"
 msgid "Увійти"
 msgstr "Anmelden"
 
+msgid "Вийти"
+msgstr "Logoutt"
+
 msgid "Тип номеру"
 msgstr "Nummerntyp"
 

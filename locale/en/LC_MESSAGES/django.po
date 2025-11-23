@@ -52,6 +52,9 @@ msgstr "BOOK THE PERFECT PLACE TO RELAX OR DINNER WITH US"
 msgid "Увійти"
 msgstr "Login"
 
+msgid "Вийти"
+msgstr "Logout"
+
 msgid "Тип номеру"
 msgstr "Room type"
 

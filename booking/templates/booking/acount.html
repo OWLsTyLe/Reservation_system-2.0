@@ -12,60 +12,63 @@
 <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
-<div class="content">
-  <h1>{% trans "Ваш профіль" %}</h1>
-  <p class="p">{% trans "Вітаємо Вас" %} {{ user.username }}</p>
+<div class="wrapper">
+    <div class="content">
+        <h1>{% trans "Ваш профіль" %}</h1>
+        <p class="p">{% trans "Вітаємо Вас" %} {{ user.username }}</p>
 
-  <h2>{% trans "Ваші бронювання" %}</h2>
-  {% if bookings %}
-  <table class="table table-striped table-hover">
-    <thead class="table-dark">
-      <tr>
-        <th><i class="bi bi-building"></i> {% trans "Готелі" %}</th>
-        <th><i class="bi bi-door-closed"></i> {% trans "Тип номеру" %}</th>
-        <th><i class="bi bi-cash-stack"></i> {% trans "Ціна за ніч" %}</th>
-        <th><i class="bi bi-calendar-plus"></i> {% trans "Дата заїзду" %}</th>
-        <th><i class="bi bi-calendar-minus"></i> {% trans "Дата виїзду" %}</th>
-        <th><i class="bi bi-credit-card"></i> {% trans "Оплата" %}</th>
-        <th><i class="bi bi-x-circle"></i> {% trans "Скасування" %}</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for booking in bookings %}
-      <tr>
-        <td>{{ booking.room.hotel.name }}</td>
-        <td>{{ booking.room.room_type.name }}</td>
-        <td>{{ booking.room.price_per_night }} грн</td>
-        <td>{{ booking.start_date }}</td>
-        <td>{{ booking.end_date }}</td>
-        <td>
-          {% if not booking.is_paid %}
-            <button class="btn btn-success" data-type="booking" data-id="{{ booking.id }}">
-              <i class="bi bi-credit-card"></i> {% trans "Оплатити" %}
-            </button>
-          {% else %}
-            <span style="color: green;"><i class="bi bi-check-circle-fill"></i> {% trans "Оплачено" %}</span>
-          {% endif %}
-        </td>
-        <td>
-          <form method="post" action="{% url 'cancel_booking' booking.id %}">
-            {% csrf_token %}
-            <button class="btn btn-danger" type="submit">
-              <i class="bi bi-trash"></i> {% trans "Відмінити" %}
-            </button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
-  {% else %}
-  <p>У вас немає замовлень готелів.</p>
-  {% endif %}
+        <h2>{% trans "Ваші бронювання" %}</h2>
+        {% if bookings %}
+        <table class="table table-striped table-hover">
+            <thead class="table-dark">
+            <tr>
+                <th><i class="bi bi-building"></i> {% trans "Готелі" %}</th>
+                <th><i class="bi bi-door-closed"></i> {% trans "Тип номеру" %}</th>
+                <th><i class="bi bi-cash-stack"></i> {% trans "Ціна за ніч" %}</th>
+                <th><i class="bi bi-calendar-plus"></i> {% trans "Дата заїзду" %}</th>
+                <th><i class="bi bi-calendar-minus"></i> {% trans "Дата виїзду" %}</th>
+                <th><i class="bi bi-credit-card"></i> {% trans "Оплата" %}</th>
+                <th><i class="bi bi-x-circle"></i> {% trans "Скасування" %}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for booking in bookings %}
+            <tr>
+                <td>{{ booking.room.hotel.name }}</td>
+                <td>{{ booking.room.room_type.name }}</td>
+                <td>{{ booking.room.price_per_night }} грн</td>
+                <td>{{ booking.start_date }}</td>
+                <td>{{ booking.end_date }}</td>
+                <td>
+                    {% if not booking.is_paid %}
+                    <button class="btn btn-success" data-type="booking" data-id="{{ booking.id }}">
+                        <i class="bi bi-credit-card"></i> {% trans "Оплатити" %}
+                    </button>
+                    {% else %}
+                    <span style="color: green;"><i class="bi bi-check-circle-fill"></i> {% trans "Оплачено" %}</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <form method="post" action="{% url 'cancel_booking' booking.id %}">
+                        {% csrf_token %}
+                        <button class="btn btn-danger" type="submit">
+                            <i class="bi bi-trash"></i> {% trans "Відмінити" %}
+                        </button>
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>У вас немає замовлень готелів.</p>
+        {% endif %}
 
-  <div class="form mt-4">
-    <a href="{% url 'home' %}" class="btn btn-primary"><i class="bi bi-house-door"></i> {% trans "На головну" %}</a>
-  </div>
+        <div class="form mt-4">
+            <a href="{% url 'home' %}" class="btn btn-primary"><i class="bi bi-house-door"></i> {% trans "На головну" %}</a>
+        </div>
+    </div>
+
 </div>
 
 <footer class="footer mt-5 text-center text-white-50">

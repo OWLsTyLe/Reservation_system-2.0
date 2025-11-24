@@ -18,27 +18,31 @@
 </head>
 <body class="page-wrapper">
     <aside class="aside">
-        <ul>
-            <li><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
-            <li><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
-            <li><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
-            <li><a href="{% url 'account' %}" class="btn">{% trans "Profile" %}</a></li>
-            <li>
-                <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
-                    {% csrf_token %}
-                    <select name="language" onchange="document.getElementById('language-form').submit();" class="select-language">
-                        <option value="uk" {% if LANGUAGE_CODE == "uk" %}selected{% endif %}>🇺🇦 UA</option>
-                        <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>🇬🇧 GB</option>
-                        <option value="de" {% if LANGUAGE_CODE == "de" %}selected{% endif %}>🇩🇪 DE</option>
-                    </select>
-                </form>
-            </li>
-            {% if user.is_authenticated%}
-            <li><a href="{% url 'logout' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Вийти" %}</a></li>
-            {% else %}
-            <li><a href="{% url 'login' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Увійти" %}</a></li>
-            {% endif%}
-        </ul>
+        <nav class="nav">
+            <ul class="nav__list">
+                    <li class="link"><a href="{% url 'home' %}" class="btn">{% trans "Головна" %}</a></li>
+                    <li class="link"><a href="{% url 'hotels' %}" class="btn">{% trans "Hotels" %}</a></li>
+                    <li class="link"><a href="{% url 'restourants' %}" class="btn">{% trans "Restaurants" %}</a></li>
+                    <li class="link"><a href="{% url 'account' %}" class="btn">{% trans "Profile" %}</a></li>
+                <li class="select-language-li">
+                    <form action="{% url 'set_language' %}" method="post" id="language-form" class="form">
+                        {% csrf_token %}
+                        <select name="language" onchange="document.getElementById('language-form').submit();" class="select-language btn">
+                            <option value="uk" {% if LANGUAGE_CODE == "uk" %}selected{% endif %}>🇺🇦 UA</option>
+                            <option value="en" {% if LANGUAGE_CODE == "en" %}selected{% endif %}>🇬🇧 GB</option>
+                            <option value="de" {% if LANGUAGE_CODE == "de" %}selected{% endif %}>🇩🇪 DE</option>
+                        </select>
+                    </form>
+                </li>
+                {% if user.is_authenticated%}
+                <li class="login"><a href="{% url 'logout' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Вийти" %}</a></li>
+                {% else %}
+                <li class="login"><a href="{% url 'login' %}" class="btn bi bi-box-arrow-in-right login"> {% trans "Увійти" %}</a></li>
+                {% endif%}
+            </ul>
+
+        </nav>
+
         {% block div %}
                 <div class="aside-slider">
                     <img src="{% static 'main/img/photo_2025-06-28_18-51-46.jpg' %}" alt="image" class="slider-img active">
@@ -46,8 +50,6 @@
                     <img src="{% static 'main/img/photo_2025-06-28_18-06-24.jpg' %}" alt="image" class="slider-img">
                     <div class="over">Тут Буде якийсь текст, но мені зараз впадлу його придумувати</div>
                     <!--Ці картинки що знизу коментаря це картинки перемикання слайда, треба буде їх змінити на кнопки-->
-                    <img src="{% static 'main/img/left.png' %}" class="prev controls">
-                    <img src="{% static 'main/img/right.png' %}" class="next controls">
                 </div>
         {% endblock %}
         {% block a%}

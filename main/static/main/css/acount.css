@@ -3,10 +3,14 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
+    min-height: 100vh;
     background: linear-gradient(135deg, #e8edf3, #f9fafc);
     color: #222;
 }
 
+.wrapper {
+    min-height: 100vh;
+}
 /* Контейнер */
 .content {
     max-width: 1100px;
@@ -120,8 +124,9 @@ tbody tr:hover {
 .footer {
     background: #2e3a53;
     padding: 25px 0;
-    margin-top: 60px;
+    margin-top: auto;
     color: white;
+    position: relative;
 }
 
 .footer-container {

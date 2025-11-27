@@ -24,8 +24,8 @@ controls.forEach(control => {
     });
 });
 
-setTimeout(()=>{
-    let index = currentIndex+1;
+setInterval(()=>{
+    let index = currentIndex + 1;
     if(index >=images.length)index = 0;
     showSlide(index);
-}, 5000);
+}, 8000);

@@ -4,8 +4,8 @@ body, html {
     padding: 0;
     width: 100%;
     min-height: 100vh;
-    font-family: 'Arial', sans-serif;
-    background-color: lightyellow;
+    font-family: "Fira Sans", sans-serif;
+    background: linear-gradient(135deg, #2a374e 0%, #4a5a73 35%, #dcd1b8 70%, #f8c88a 100%);
 }
 
 /* Обёртка страницы */
@@ -65,13 +65,13 @@ ul{
     margin: 0;
     display: flex;
     justify-content: center;
-    align-items: center;;
+    align-items: center;
     width: 100%;
     height: 100px;
     position: relative;
     z-index: 10;
     backdrop-filter: blur(5px);
-    background: rgba(0,0,0,0.5);
+    background: rgba(0,0,0,0.3);
 }
 
 
@@ -85,15 +85,6 @@ ul{
     margin-right: auto;
 }
 
-.logo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: left;
-    height: 80px;
-    width: 300px;
-    margin-right: auto;
-}
 
 .header-btn-container{
     height: 48px;
@@ -183,12 +174,14 @@ ul{
     border: none;
     text-transform: uppercase;
     font-weight: bold;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
     text-decoration: none;
 }
 
 .btn:hover {
-
+    color: white;
+    text-shadow: 0 0 4px rgba(255, 255, 255), 0 0 6px rgb(216, 125, 0);
+    transform: scale(1.1);
 }
 
 /* Список языков */
@@ -196,7 +189,7 @@ ul{
     appearance: none;
     justify-content: center;
     align-items: center;
-    background:  url("data:image/svg+xml;charset=UTF-8,<svg fill='%23f6a99e' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
+    background:  url("data:image/svg+xml;charset=UTF-8,<svg fill='%23ffffff' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>") no-repeat right 10px center;
     border: none;
     outline: none;
     color: white;
@@ -205,10 +198,13 @@ ul{
     cursor: pointer;
     width: 100px;
     text-align: center;
+    transition: 0.3s ease-in-out;
 }
 
 .select-language:hover {
-
+    color: white;
+    text-shadow: 0 0 4px rgba(255, 255, 255), 0 0 6px rgb(216, 125, 0);
+    transform: scale(1.1);
 }
 
 .select-language option {
@@ -279,51 +275,42 @@ ul{
 
 /* Footer */
 .footer {
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background: #0B0D17;
-    color : #D9D8E1;
+    background: #2e3a53;
+    padding: 25px 0;
+    margin-top: auto;
+    color: white;
+    font-size: 26px;
     position: relative;
-    bottom: 0;
-    width: 100%;
 }
 
 .footer-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    max-width: 1100px;
     margin: 0 auto;
-    width: 1500px;
-    height: 60px;
+    text-align: center;
+    font-size: 18px;
 }
 
-.socials {
-    display: flex;
+.footer a {
+    color: #9ecbff;
+    text-decoration: none;
 }
 
-.socials-item {
-    margin-left: 16px;
+.footer a:hover {
+    text-decoration: underline;
 }
 
-.socials .img {
-    padding: 5px;
-    width: 100%;
-    height: auto;
+.drop-down{
+    height: 40px;
+    width: 40px;
+    bottom: 30px;
+    left: 50%;
+    transition: all 0.3s ease-in-out ;
+    position: absolute;
+    z-index: 10;
 }
-
-.socials .img:hover {
-    opacity: 0.5;
-    background: lightgray;
-}
-
-.contact {
-    display: block;
-    justify-content: center;
-    align-items: center;
-}
-
-footer .footer-container .contact p {
-    display: block;
-    margin: 10px 0;
+.drop-down:hover{
+    opacity: 0.7;
+    cursor: pointer;
+    transform: translateY(6px);
+    color: white;
 }

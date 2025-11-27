@@ -58,7 +58,7 @@ msgid "Увійти"
 msgstr "Anmelden"
 
 msgid "Вийти"
-msgstr "Logoutt"
+msgstr "Verlassen"
 
 msgid "Тип номеру"
 msgstr "Nummerntyp"

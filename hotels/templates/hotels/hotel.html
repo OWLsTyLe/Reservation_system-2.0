@@ -1,34 +1,167 @@
-<!doctype html>
 {% load static %}
 {% load i18n %}
-<html lang="en">
+<!DOCTYPE html>
+<html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
-    <title>{{ hotel.name }}</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Swiper.js -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"/>
+
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+
+<style>
+<style>
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg,#f4f7fa 0%,#e8edf4 100%);
+    color: #333;
+}
+
+/* HERO */
+.hero-wrapper {
+    position: relative;
+    height: 60vh;
+    min-height: 400px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 25px 80px rgba(0,0,0,0.18);
+}
+.hero-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7);
+    transform: scale(1.1);
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+    from {transform: scale(1.1);}
+    to {transform: scale(1.2);}
+}
+
+/* Glass Card */
+.glass-card {
+    margin-top: -80px;
+    backdrop-filter: blur(18px);
+    background: rgba(255,255,255,0.56);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+    animation: floatUp 0.9s ease-out;
+}
+@keyframes floatUp {
+    from {opacity:0; transform:translateY(30px);}
+    to {opacity:1; transform:translateY(0);}
+}
+
+/* Titles */
+.hotel-title { font-size:2.8rem; font-weight:800; background:linear-gradient(90deg,#3f50f5,#8592ff); -webkit-background-clip:text; color:transparent; }
+.hotel-desc { font-size:1.2rem; line-height:1.6; color:#555; text-align:center; }
+
+/* Buttons */
+.btn-lux { padding:12px 28px; border-radius:14px; font-size:1.1rem; font-weight:600; transition:0.35s ease;}
+.btn-gradient { background:linear-gradient(135deg,#3f50f5,#8592ff); color:#fff; border:none; box-shadow:0 12px 28px rgba(63,80,245,0.35);}
+.btn-gradient:hover { transform:translateY(-3px) scale(1.02); box-shadow:0 20px 40px rgba(63,80,245,0.45);}
+.btn-soft { background:#f0f2f7; color:#333; border:none;}
+.btn-soft:hover { background:#e4e6ec; transform:translateY(-3px);}
+
+/* Rating */
+.rating { background:linear-gradient(135deg,#ffc107,#ffb200); padding:10px 18px; border-radius:16px; font-weight:bold; color:#000; display:inline-block; margin-bottom:15px; box-shadow:0 4px 15px rgba(255,174,0,0.4); }
+
+/* Swiper Gallery */
+.swiper { width:100%; padding-bottom:30px;}
+.swiper-slide img { width:100%; height:220px; object-fit:cover; border-radius:20px; }
+
+/* Room cards */
+.room-card { border-radius:20px; overflow:hidden; box-shadow:0 10px 35px rgba(0,0,0,0.08); transition: transform 0.3s;}
+.room-card:hover { transform:translateY(-5px); }
+
+/* Services */
+.service-icon { font-size:2rem; color:#3f50f5; }
+
+/* Map */
+.map-container { border-radius:20px; overflow:hidden; box-shadow:0 10px 35px rgba(0,0,0,0.08); height:400px; }
+
+/* Reviews */
+.review-card { border-radius:20px; padding:25px; background:#fff; box-shadow:0 10px 35px rgba(0,0,0,0.08); margin-bottom:20px; }
+
+</style>
+</style>
+
+<title>{{ hotels.name }}</title>
 </head>
 <body>
-{%block content%}
-<div class="container">
-<div>
-<!-- <img src="{{ hotels.image.url }}" alt="{{ hotel.name }}" class="hotel-image" тут ти поймеш шо робить з картинкою >-->
+
+<div class="container py-5">
+
+<!-- HERO -->
+<div class="hero-wrapper mb-5">
+    {% if hotels.image %}
+        <img src="{{ hotels.image.url }}" alt="">
+    {% endif %}
 </div>
 
-    <div class="features">
-        <h1>{{ hotels.name|safe }}</h1>
-        <h2>{{ hotels.description|safe }}</h2>
-        <p>Rating: {{ hotels.rating }}</p>
+<!-- INFO CARD -->
+<div class="glass-card mx-auto" style="max-width:900px;">
+    <div class="text-center mb-3">
+        <span class="rating">⭐ {{ hotels.rating }}</span>
     </div>
-    <div class="button">
-        <a class="btn1" href="{% url 'create_booking' %}" >{% trans "Бронювати" %}</a>
-        <a class="btn1" href="{% url 'hotels' %}" >{% trans "Інші готелі" %}</a>
+    <h1 class="hotel-title text-center mb-4">{{ hotels.name }}</h1>
+    <p class="hotel-desc mb-4">{{ hotels.description|safe }}</p>
+    <div class="d-flex justify-content-center gap-4 mt-4">
+        <a href="{% url 'create_booking' %}" class="btn-lux btn-gradient px-5">{% trans "Бронювати" %}</a>
+        <a href="{% url 'hotels' %}" class="btn-lux btn-soft px-5">{% trans "Інші готелі" %}</a>
     </div>
 </div>
-{%endblock%}
+
+<!-- ROOMS -->
+<h2 class="mt-5 mb-3 fw-bold text-center">Номери та ціни</h2>
+<div class="row g-4">
+    {% for room in hotels.hotel_rooms.all %}
+    <div class="col-md-4">
+        <div class="room-card">
+            {% if room.room_type %}
+            <div class="p-3">
+                <h5 class="fw-bold">{{ room.room_type.name }}</h5>
+                <p class="text-muted">{{ room.room_type.description }}</p>
+                <p class="fw-bold">{{ room.price_per_night }} ₴/ніч</p>
+                <p>Доступно: {{ room.available_count }} з {{ room.total_count }}</p>
+                <a href="{% url 'create_booking' %}?room={{ room.id }}" class="btn btn-gradient btn-lux mt-2">Бронювати</a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<!-- SERVICES -->
+<h2 class="mt-5 mb-3 fw-bold text-center">Послуги</h2>
+<div class="row text-center g-4">
+    <div class="col-md-3"><i class="fas fa-wifi service-icon mb-2"></i><p>Wi-Fi</p></div>
+    <div class="col-md-3"><i class="fas fa-dumbbell service-icon mb-2"></i><p>Фітнес</p></div>
+    <div class="col-md-3"><i class="fas fa-spa service-icon mb-2"></i><p>Спа</p></div>
+    <div class="col-md-3"><i class="fas fa-utensils service-icon mb-2"></i><p>Ресторан</p></div>
+</div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1.5,
+    spaceBetween: 20,
+    centeredSlides: true,
+    loop: true,
+    pagination: { el: ".swiper-pagination", clickable:true },
+    breakpoints: { 768:{ slidesPerView:2.5 }, 992:{ slidesPerView:3.5 } }
+});
+</script>
 </body>
 </html>

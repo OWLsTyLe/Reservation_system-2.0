@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2601e863-32ce-43fa-9c31-7686bfae6481" name="Changes" comment="update">
-      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/main/img/booking.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main/static/main/img/favicon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hotels/templates/hotels/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels/templates/hotels/hotels.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main/static/main/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/booking/templates/booking/create_booking.html" beforeDir="false" afterPath="$PROJECT_DIR$/booking/templates/booking/create_booking.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/main/css/Create_booking.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/css/Create_booking.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/main/img/bg.png" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/img/bg.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28238.10" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
       </set>
     </attachedChunks>
   </component>
@@ -81,15 +84,6 @@
       <workItem from="1763906001034" duration="12000" />
       <workItem from="1763920853452" duration="6598000" />
       <workItem from="1763990007017" duration="2980000" />
-      <workItem from="1764522793951" duration="63000" />
-      <workItem from="1764523112153" duration="960000" />
-      <workItem from="1764525132358" duration="1911000" />
-      <workItem from="1764593734329" duration="1100000" />
-      <workItem from="1764793361683" duration="142000" />
-      <workItem from="1764793631517" duration="668000" />
-      <workItem from="1764807975935" duration="14000" />
-      <workItem from="1765063124525" duration="270000" />
-      <workItem from="1765198541857" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />

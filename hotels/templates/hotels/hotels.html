@@ -17,21 +17,20 @@
 {% block content %}
 <div class="hotels-list">
     {% for hotel in hotels %}
-            <a href="{% url 'din' hotel.id %}">
-                <div class="hotel-card btn">
-                    {% if hotel.image %}
-                    <div class="hotel-image-container">
-                        <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}" class="hotel-image">
-                    </div>
-                    {% endif %}
-                    <h2>{{ hotel.name|safe }}</h2>
-                    <p><i class="bi bi-star" style="color: gold; font-size: 1.5rem;"></i>{{ hotel.rating }}</p>
-                    <p>{{ hotel.description|safe }}</p>
-                </div>
-            </a>
+    <a href="{% url 'din' hotel.id %}">
+        <div class="hotel-card btn">
+            {% if hotel.image %}
+            <img src="{{ hotel.image.url }}" alt="{{ hotel.name }}" class="hotel-image">
+            {% endif %}
+            <div class="overlay"></div>
+            <div class="hotel-info">
+                <h2 class="test1">{{ hotel.name|safe }}</h2>
+                <p class="test2"><i class="bi bi-star" style="color: gold; font-size: 1.5rem;"></i>{{ hotel.rating }}</p>
+                <p class="test3">{{ hotel.description|safe }}</p>
+            </div>
+        </div>
+    </a>
     {% endfor %}
-    {% block footer %}
-    {% endblock %}
 </div>
 
 {% endblock %}

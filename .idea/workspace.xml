@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2601e863-32ce-43fa-9c31-7686bfae6481" name="Changes" comment="update" />
+    <list default="true" id="2601e863-32ce-43fa-9c31-7686bfae6481" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hotels/templates/hotels/hotels.html" beforeDir="false" afterPath="$PROJECT_DIR$/hotels/templates/hotels/hotels.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/static/main/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/main/static/main/css/style.css" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +62,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-WS-252.28238.10" />
       </set>
     </attachedChunks>
   </component>
@@ -76,8 +81,15 @@
       <workItem from="1763906001034" duration="12000" />
       <workItem from="1763920853452" duration="6598000" />
       <workItem from="1763990007017" duration="2980000" />
-      <workItem from="1764172446797" duration="4759000" />
-      <workItem from="1764230745274" duration="1220000" />
+      <workItem from="1764522793951" duration="63000" />
+      <workItem from="1764523112153" duration="960000" />
+      <workItem from="1764525132358" duration="1911000" />
+      <workItem from="1764593734329" duration="1100000" />
+      <workItem from="1764793361683" duration="142000" />
+      <workItem from="1764793631517" duration="668000" />
+      <workItem from="1764807975935" duration="14000" />
+      <workItem from="1765063124525" duration="270000" />
+      <workItem from="1765198541857" duration="8000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -95,30 +107,11 @@
       <option name="project" value="LOCAL" />
       <updated>1763901853920</updated>
     </task>
-    <task id="LOCAL-00003" summary="update">
-      <option name="closed" value="true" />
-      <created>1764231686529</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1764231686529</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update" />

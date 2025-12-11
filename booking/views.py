@@ -1,13 +1,13 @@
-from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
-from .forms import BookingForm
-from hotels.models import HotelRoom
-from .models import Booking
 from django.core.mail import send_mail
 import stripe
 from django.http import JsonResponse
 import json
 from django.conf import settings
+from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
+from .models import Booking
+from hotels.models import Hotel, HotelRoom
+from .forms import BookingForm
 
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -30,14 +30,17 @@ def send_booking_confirmation(user_email, booking):
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user_email])
 
 @login_required
-def create_booking(request):
+def create_booking(request, hotel_id):
+    hotel = get_object_or_404(Hotel, id=hotel_id)
+
     if request.method == 'POST':
-        form = BookingForm(request.POST)
+        form = BookingForm(request.POST, hotel=hotel)
         if form.is_valid():
             room = form.cleaned_data['room']
             start_date = form.cleaned_data['start_date']
             end_date = form.cleaned_data['end_date']
 
+            # зменшення доступної кількості кімнат на 1
             if room.available_count > 0:
                 room.available_count -= 1
                 room.save()
@@ -52,11 +55,15 @@ def create_booking(request):
                 send_booking_confirmation(request.user.email, booking)
                 return redirect('home')
             else:
-                form.add_error('room', 'The selected room is no longer available.')
+                error = "Вибраний номер більше недоступний."
+                return render(request, 'booking/create_booking.html', {'hotel': hotel, 'form': form, 'error': error})
     else:
-        form = BookingForm()
+        form = BookingForm(hotel=hotel)
 
-    return render(request, 'booking/create_booking.html', {'form': form})
+    return render(request, 'booking/create_booking.html', {'hotel': hotel, 'form': form})
+
+
+
 
 @login_required
 def cancel_booking(request, booking_id):

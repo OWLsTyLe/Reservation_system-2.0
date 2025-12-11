@@ -124,3 +124,42 @@ msgstr "Already registered"
 msgid "Увійти через Google"
 msgstr "Sign in with Google"
 
+msgid "Вітаємо у вашому ідеальному місці для відпочинку!"
+msgstr "Welcome to your perfect place for relaxation!"
+
+msgid "Плануєш подорож і хочеш знайти ідеальний готель? Тут ти можеш зробити це швидко, просто і без зайвого гемору. Ми зібрали найкращі варіанти проживання — від бюджетних кімнат до розкішних апартаментів — щоб кожен міг вибрати саме те, що потрібно."
+msgstr "Planning a trip and want to find the perfect hotel? Here you can do it quickly, easily, and hassle-free. We have gathered the best accommodation options — from budget rooms to luxury apartments — so everyone can choose exactly what they need."
+
+msgid "Зручний пошук готелів"
+msgstr "Convenient hotel search"
+
+msgid "Обирай за містом, ціною, зручностями чи датами. У нас усе інтуїтивно — ввів параметри, натиснув кнопку, і система покаже тільки актуальні вільні номери."
+msgstr "Choose by city, price, amenities, or dates. Everything is intuitive — enter parameters, press the button, and the system will show only currently available rooms."
+
+msgid "Просте та безпечне бронювання"
+msgstr "Simple and secure booking"
+
+msgid "Ніяких довгих форм і дзвінків — усе онлайн. Переглянув деталі, вибрав номер, натиснув “Забронювати” — і готово. Твоє бронювання миттєво підтверджується."
+msgstr "No long forms or calls — everything is online. Review details, choose a room, click “Book” — and done. Your booking is instantly confirmed."
+
+msgid "Для роботи чи відпочинку"
+msgstr "For work or leisure"
+
+msgid "Плануєш відрядження? Хочеш романтичний вікенд? А може, шукаєш місце, де можна розслабитись біля моря? Тут є все — просто обирай, що тобі потрібно."
+msgstr "Planning a business trip? Want a romantic weekend? Or maybe looking for a place to relax by the sea? Here you have it all — just choose what you need."
+
+msgid "Чому саме ми?"
+msgstr "Why choose us?"
+
+msgid "Великий вибір готелів"
+msgstr "Wide selection of hotels"
+
+msgid "Актуальні ціни та доступність"
+msgstr "Up-to-date prices and availability"
+
+msgid "Зручне онлайн-бронювання"
+msgstr "Convenient online booking"
+
+msgid "Підтримка, яка не зникає"
+msgstr "Support that never disappears"
+

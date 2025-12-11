@@ -128,3 +128,43 @@ msgstr "Bereits registriert?"
 
 msgid "Увійти через Google"
 msgstr "Melden Sie sich mit Google an"
+
+msgid "Вітаємо у вашому ідеальному місці для відпочинку!"
+msgstr "Willkommen an Ihrem perfekten Ort zur Erholung!"
+
+msgid "Плануєш подорож і хочеш знайти ідеальний готель? Тут ти можеш зробити це швидко, просто і без зайвого гемору. Ми зібрали найкращі варіанти проживання — від бюджетних кімнат до розкішних апартаментів — щоб кожен міг вибрати саме те, що потрібно."
+msgstr "Planen Sie eine Reise und möchten das perfekte Hotel finden? Hier können Sie es schnell, einfach und unkompliziert tun. Wir haben die besten Unterkunftsmöglichkeiten zusammengestellt – von Budgetzimmern bis zu luxuriösen Apartments – damit jeder genau das wählen kann, was er braucht."
+
+msgid "Зручний пошук готелів"
+msgstr "Bequeme Hotelsuche"
+
+msgid "Обирай за містом, ціною, зручностями чи датами. У нас усе інтуїтивно — ввів параметри, натиснув кнопку, і система покаже тільки актуальні вільні номери."
+msgstr "Wählen Sie nach Stadt, Preis, Ausstattung oder Datum. Alles ist intuitiv – geben Sie die Parameter ein, drücken Sie die Taste, und das System zeigt nur die aktuell verfügbaren Zimmer."
+
+msgid "Просте та безпечне бронювання"
+msgstr "Einfache und sichere Buchung"
+
+msgid "Ніяких довгих форм і дзвінків — усе онлайн. Переглянув деталі, вибрав номер, натиснув “Забронювати” — і готово. Твоє бронювання миттєво підтверджується."
+msgstr "Keine langen Formulare oder Anrufe – alles online. Details ansehen, Zimmer auswählen, auf „Buchen“ klicken – fertig. Ihre Buchung wird sofort bestätigt."
+
+msgid "Для роботи чи відпочинку"
+msgstr "Für Arbeit oder Freizeit"
+
+msgid "Плануєш відрядження? Хочеш романтичний вікенд? А може, шукаєш місце, де можна розслабитись біля моря? Тут є все — просто обирай, що тобі потрібно."
+msgstr "Planen Sie eine Geschäftsreise? Möchten Sie ein romantisches Wochenende? Oder suchen Sie vielleicht einen Ort, um am Meer zu entspannen? Hier gibt es alles – wählen Sie einfach, was Sie brauchen."
+
+msgid "Чому саме ми?"
+msgstr "Warum wir?"
+
+msgid "Великий вибір готелів"
+msgstr "Große Auswahl an Hotels"
+
+msgid "Актуальні ціни та доступність"
+msgstr "Aktuelle Preise und Verfügbarkeit"
+
+msgid "Зручне онлайн-бронювання"
+msgstr "Bequeme Online-Buchung"
+
+msgid "Підтримка, яка не зникає"
+msgstr "Unterstützung, die niemals verschwindet"
+

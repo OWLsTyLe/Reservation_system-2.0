@@ -315,4 +315,81 @@ ul{
     cursor: pointer;
     transform: translateY(6px);
     color: white;
+}.main-content {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 30px 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.8;
+    font-size: 1.2rem; /* трохи більший базовий текст */
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Головний заголовок */
+.main-content h1 {
+    font-size: 2.5rem; /* збільшено */
+    color: #ffeaa7;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Підзаголовки */
+.main-content h2 {
+    font-size: 1.8rem; /* збільшено */
+    color: #ffd369;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Параграфи */
+.main-content p {
+    font-size: 1.25rem; /* трохи більший текст */
+    margin-bottom: 20px;
+    color: #f0f0f0;
+}
+
+/* Списки */
+.main-content ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    font-size: 1.25rem; /* збільшено */
+    color: #f7f1e3;
+}
+
+/* Декоративна точка для списку */
+.main-content ul li::before {
+    content: '✔️';
+    position: absolute;
+    left: 0;
+}
+
+/* Адаптивність для мобільних */
+@media (max-width: 600px) {
+    .main-content {
+        padding: 20px 25px;
+        margin: 30px 10px;
+        font-size: 1.1rem; /* трохи менше для мобільних */
+    }
+
+    .main-content h1 {
+        font-size: 2rem;
+    }
+
+    .main-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .main-content p,
+    .main-content ul li {
+        font-size: 1.15rem;
+    }
 }

@@ -3,133 +3,71 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: 'Arial', sans-serif;
-    background: #660e60;
-    color: #f3d0a4;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Fira Sans", sans-serif;
+    color: #64406E;
+}
+
+.background-image{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+h1{
+    font-size: 4rem;
+    padding: 10px;
 }
 
 .center-container {
     position: relative;
     width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa099);
+    height: 100%;
+    background: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-aside {
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    padding: 20px 0;
-    background: none;
-}
-
-aside ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
     justify-content: center;
-    gap: 20px;
 }
 
-/* Стилі для кнопок */
-.btn {
-    padding: 15px 40px;
-    font-size: 18px;
-    color: #f3d0a4;
-    background: #893f71;
-    border: 2px solid #cfa093;
-    border-radius: 30px;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 0 10px rgba(207, 160, 147, 0.5);
-    text-decoration: none;
-}
 
-.btn:hover {
-    background: #ac6f82;
-    border-color: #f3d0a4;
-    box-shadow: 0 0 20px rgba(243, 208, 164, 0.8);
-}
 
-.hotels-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-    padding: 50px 20px;
-    margin-top: 80px; /* Відступ для уникнення перекриття кнопками */
-}
-
-.hotel-card {
-    background: transparent;
-    color: #660e60;
-    border-radius: 20px;
-    overflow: hidden;
-    width: 100%;
-    max-width: 350px;
-    padding: 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
-    text-align: center;
-}
-
-.hotel-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.3);
-    background: #cfa093;
-}
-
-.hotel-card img {
-    width: 100%;
-    height: auto;
-    border-bottom: 2px solid #660e60;
-    opacity: 0.6;
-    transition: opacity 0.3s ease;
-}
-
-.hotel-card:hover img {
-    opacity: 1;
-}
-
-.hotel-card h2 {
-    font-size: 1.5rem;
-    margin: 15px 0;
-    font-weight: bold;
-}
-
-.hotel-card p {
-    font-size: 1rem;
-    margin: 10px 0;
-}
-
-.hotel-card .btn-danger {
-    background: #660e60;
-    color: #f3d0a4;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background 0.3s ease;
-}
-
-.hotel-card .btn-danger:hover {
-    background: #893f71;
-}
 .booking-form {
-    margin-left: 500px;
-    margin-top: -500px;
     position: absolute;
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa093);
+    background: white;
     padding: 20px;
     border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 400px;
+    font-size: 18px;
+    box-shadow: 0 0 10px rgba(1, 1, 1, 0.5);
+    width: 800px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     z-index: 10;
 }
 
@@ -138,91 +76,125 @@ aside ul {
 }
 
 .booking-form button {
-    background: #cfa093;
-    color: black;
+    background: #64406E;
+    color: white;
     border: none;
     padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 100%;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+    width: 400px;
+    /*box-shadow: 1px 2px 4px rgba(1, 1, 1, 0.5);*/
+    margin-top: 10px;
 }
 
 .booking-form button:hover {
-    background: linear-gradient(135deg, #660e60, #893f71, #ac6f82, #cfa093);
-
-}
-.reservation-form {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.reservation-form .btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
+    background: darkseagreen;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    cursor: pointer;
+    transform: translateY(-3px);
+    text-shadow:
+            0 0 5px #ffffff,
+            0 0 10px #ffffff,
+            0 0 20px #ffffff
 }
 
-.reservation-form .btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #004085;
+select {
+    width: 450px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    background: whitesmoke;
+    /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);*/
+    transition: 0.3s ease-in-out;
+}
+select:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
 }
 
-.form-label {
+input {
+    width: 450px;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    height: 40px;
+    background: whitesmoke;
+    /*box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);*/
+    transition: 0.3s ease-in-out;
+}
+
+input:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 10px;
     font-weight: bold;
+    font-size: 20px;
 }
+
+
+
+
 
 /*footer*/
-.footer{
-    display: flex;
-    align-items: center;
-    height: 80px;
-    background: #0B0D17;
-    color : #D9D8E1;
-}
+/*.footer{*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    height: 80px;*/
+/*    background: #0B0D17;*/
+/*    color : #D9D8E1;*/
+/*}*/
 
-.footer-container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 0 auto ;
-    width: 1500px;
-    height: 60px;
-}
-.footer-copyright{
-    font-size: 14px;
-}
-.socials{
-    display: flex;
-}
+/*.footer-container{*/
+/*    display: flex;*/
+/*    justify-content: space-between;*/
+/*    align-items: center;*/
+/*    margin: 0 auto ;*/
+/*    width: 1500px;*/
+/*    height: 60px;*/
+/*}*/
+/*.footer-copyright{*/
+/*    font-size: 14px;*/
+/*}*/
+/*.socials{*/
+/*    display: flex;*/
+/*}*/
 
-.socials-item{
-    margin-left: 16px;
-}
+/*.socials-item{*/
+/*    margin-left: 16px;*/
+/*}*/
 
 
-.img{
-    padding: 5px;
-    width: 100%;
-    height: auto;
-}
+/*.img{*/
+/*    padding: 5px;*/
+/*    width: 100%;*/
+/*    height: auto;*/
+/*}*/
 
-.img:hover{
-    opacity: 0.5;
-    background: lightgray;
-}
+/*.img:hover{*/
+/*    opacity: 0.5;*/
+/*    background: lightgray;*/
+/*}*/
 
-.contact{
-    display: block;
-    justify-content: center;
-    align-items: center;
+/*.contact{*/
+/*    display: block;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
 
-}
-footer .footer-container .contact p {
-    display: block;
-    margin: 10px 0;
-}
+/*}*/
+/*footer .footer-container .contact p {*/
+/*    display: block;*/
+/*    margin: 10px 0;*/
+/*}*/
 /*kjsbefkhbahejfb*/

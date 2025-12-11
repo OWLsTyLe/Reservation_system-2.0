@@ -11,8 +11,11 @@
     <link rel="stylesheet" href="{% static 'main/css/Create_booking.css' %}">
 </head>
 <body>
-    <div class="center-container"></div>
-    <h1>bookin a rooms</h1>
+    <div class="background-image">
+        <img src="{% static 'main/img/bg.png' %}" alt="" class="bg-img">
+    </div>
+    <div class="center-container">
+
         <form method="POST" class="booking-form">
             {% csrf_token %}
             {{ form.as_p }}

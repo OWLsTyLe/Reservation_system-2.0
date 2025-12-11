@@ -26,7 +26,9 @@
                     {% endif %}
                     <h2>{{ hotel.name|safe }}</h2>
                     <p><i class="bi bi-star" style="color: gold; font-size: 1.5rem;"></i>{{ hotel.rating }}</p>
-                    <p>{{ hotel.description|safe }}</p>
+                    <p>{{hotel.city}}</p>
+                    <p>{{hotel.address}}</p>
+<!--                    <p>{{ hotel.description|safe }}</p>-->
                 </div>
             </a>
     {% endfor %}

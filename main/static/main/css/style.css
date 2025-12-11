@@ -1,7 +1,6 @@
 body, html {
     margin: 0;
     padding: 0;
-    height: 100%;
     width: 100%;
     min-height: 100vh;
     font-family: "Fira Sans", sans-serif;
@@ -85,8 +84,9 @@ ul{
 
 .hotels-list {
     display: flex;
-    width: 100%;
-
+    flex-wrap: wrap;
+    width: auto;
+    min-width: 0;
     justify-content: center;
     align-items: center;
     gap: 30px;

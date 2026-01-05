@@ -1,3 +1,5 @@
+from allauth.account.forms import SignupForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail
 import stripe
 from django.http import JsonResponse
@@ -29,7 +31,6 @@ def send_booking_confirmation(user_email, booking):
     """
     send_mail(subject, message, settings.EMAIL_HOST_USER, [user_email])
 
-@login_required
 def create_booking(request, hotel_id):
     hotel = get_object_or_404(Hotel, id=hotel_id)
 
@@ -40,7 +41,6 @@ def create_booking(request, hotel_id):
             start_date = form.cleaned_data['start_date']
             end_date = form.cleaned_data['end_date']
 
-            # зменшення доступної кількості кімнат на 1
             if room.available_count > 0:
                 room.available_count -= 1
                 room.save()
@@ -62,14 +62,30 @@ def create_booking(request, hotel_id):
 
     return render(request, 'booking/create_booking.html', {'hotel': hotel, 'form': form})
 
-
-
-
 @login_required
 def cancel_booking(request, booking_id):
-    return redirect('home')
+    if request.method == 'POST':
+        # отримуємо бронювання користувача
+        booking = get_object_or_404(Booking, id=booking_id, user=request.user)
+
+        # якщо кімната існує, збільшуємо доступну кількість
+        if booking.room:
+            booking.room.available_count += 1
+            booking.room.save()
+
+        # видаляємо бронювання
+        booking.delete()
+
+    # після скасування (або GET) редірект на акаунт
+    return redirect('account')
+
+
 
 def account(request):
+    if not request.user.is_authenticated:
+        form = AuthenticationForm()
+        return redirect('login')
+
     bookings = Booking.objects.filter(user=request.user)
     return render(request, 'booking/acount.html', {
         'bookings': bookings,
